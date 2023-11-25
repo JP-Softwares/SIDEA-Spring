@@ -8,7 +8,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Denunciante {
+public class usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -16,6 +16,7 @@ public class Denunciante {
     private String senha = "";
     private String nome = "";
     private String email = "";
+    private String cargo = "";
     @OneToOne
     private Telefone telefone;
 }

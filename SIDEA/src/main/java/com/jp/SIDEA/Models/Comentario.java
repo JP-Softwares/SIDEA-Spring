@@ -3,19 +3,18 @@ package com.jp.SIDEA.Models;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Getter
 @Setter
-public class Analista {
+@Getter
+@NoArgsConstructor
+public class Comentario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String login = "";
-    private String senha = "";
-    private String nome = "";
-    private String email = "";
-    @OneToOne
-    private Telefone telefone;
+    private String conteudo = "";
+    @ManyToOne
+    private usuario autor;
 }
