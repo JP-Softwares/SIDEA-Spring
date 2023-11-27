@@ -17,6 +17,7 @@ public class usuario {
     private String nome = "";
     private String email = "";
     private String cargo = "";
+    private String Tipo = "";
     @OneToOne
     private Telefone telefone;
 }
