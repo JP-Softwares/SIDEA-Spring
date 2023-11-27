@@ -16,5 +16,5 @@ public class Comentario {
     private Long id;
     private String conteudo = "";
     @ManyToOne
-    private usuario autor;
+    private Usuario autor;
 }

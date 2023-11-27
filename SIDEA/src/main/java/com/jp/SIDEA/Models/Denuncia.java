@@ -31,9 +31,9 @@ public class Denuncia {
     private Date data_encerramento;
     private String provavel_criminoso;
     @OneToOne
-    private usuario autor;
+    private Usuario autor;
     @OneToOne
-    private usuario executor;
+    private Usuario executor;
     private int status;
     private String parecer_tec;
 }
