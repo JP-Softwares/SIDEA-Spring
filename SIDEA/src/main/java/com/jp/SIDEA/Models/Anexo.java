@@ -19,7 +19,7 @@ public class Anexo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome_arquivo = "";
-    private Byte[] conteudo;
+    //private Byte[] conteudo;
     private BigInteger tamanho;
     private String md5;
 }

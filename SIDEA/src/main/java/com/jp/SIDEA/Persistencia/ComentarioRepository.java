@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ComentarioRepository extends JpaRepository<Comentario,Long> {
-    Comentario findByProtocolo(String id);
+    Comentario findByid(Long id);
 }
