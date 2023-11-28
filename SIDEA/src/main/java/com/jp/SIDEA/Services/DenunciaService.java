@@ -16,8 +16,4 @@ public class DenunciaService {
         Denuncia den = denuncias.save(denuncia);
         return den;
     }
-
-
-
-
 }

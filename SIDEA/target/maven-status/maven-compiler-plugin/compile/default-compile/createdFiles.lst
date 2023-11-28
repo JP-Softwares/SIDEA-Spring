@@ -1,0 +1,14 @@
+com\jp\SIDEA\Models\Usuario.class
+com\jp\SIDEA\SideaApplication.class
+com\jp\SIDEA\Persistencia\ComentarioRepository.class
+com\jp\SIDEA\Persistencia\UsuarioRepository.class
+com\jp\SIDEA\Models\Denuncia.class
+com\jp\SIDEA\Models\Anexo.class
+com\jp\SIDEA\Persistencia\DenunciaRepository.class
+com\jp\SIDEA\Services\usuarioService.class
+com\jp\SIDEA\Services\DenunciaService.class
+com\jp\SIDEA\Persistencia\TelefoneRepository.class
+com\jp\SIDEA\Persistencia\AnexoRepository.class
+com\jp\SIDEA\ServletInitializer.class
+com\jp\SIDEA\Models\Comentario.class
+com\jp\SIDEA\Models\Telefone.class
