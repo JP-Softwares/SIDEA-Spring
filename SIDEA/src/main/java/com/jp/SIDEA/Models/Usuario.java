@@ -3,11 +3,13 @@ package com.jp.SIDEA.Models;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,4 +22,11 @@ public class Usuario {
     private String Tipo = "";
     @OneToOne
     private Telefone telefone;
+
+    public Usuario(String login, String senha, String nome, String email){
+        this.login = login;
+        this.senha = senha;
+        this.nome = nome;
+        this.email = email;
+    }
 }
