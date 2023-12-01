@@ -44,13 +44,11 @@
 
 .input_entrada {
     padding:5px;
-    border-style: none;
+    pointer-events: auto;
 }
 
 .input_entrada:focus ~ .label-input {
-    background-color: #000;
-    border: #000;
-    border-width: 1px;
+    border: 1px solid #000;
 }
 
 input[type=submit] {
@@ -198,8 +196,10 @@ input:-webkit-autofill {
   background-color: #ecf0f1; 
   display: flex;
   align-items: center;
-  margin: 5px; 
+  margin: 5px;
+  padding: 2px;
 }
+
 .icon-modify {
     color: #7f8c8d;
     padding: 0 5px;
