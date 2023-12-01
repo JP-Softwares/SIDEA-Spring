@@ -11,7 +11,7 @@ public class TelaInicialController {
     
 
     @GetMapping
-    public ModelAndView denunciaView(){
+    public ModelAndView homeView(){
         ModelAndView modelinho = new ModelAndView("Home/index");
         return modelinho;
     }
