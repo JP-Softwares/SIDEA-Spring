@@ -1,5 +1,6 @@
 package com.jp.SIDEA.Services;
 
+import com.jp.SIDEA.Controller.UsuarioController;
 import com.jp.SIDEA.Models.Denuncia;
 import com.jp.SIDEA.Models.Usuario;
 import com.jp.SIDEA.Models.Records.usuarioJson;
@@ -12,9 +13,15 @@ import org.springframework.stereotype.Service;
 public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarios;
+
+
+    @Autowired
+    private UsuarioController usuCont;
+
     public Usuario Salvar(usuarioJson json){
         Usuario novoUsuario = new Usuario();
         novoUsuario.setLogin(json.login());
+        System.out.println(json.login());
         novoUsuario.setSenha(json.senha());
         novoUsuario.setNome(json.nome());
         novoUsuario.setEmail(json.email());

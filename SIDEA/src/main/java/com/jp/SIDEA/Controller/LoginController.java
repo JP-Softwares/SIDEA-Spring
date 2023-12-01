@@ -37,7 +37,8 @@ public class LoginController {
 
     @PostMapping("/criarConta")
     public ModelAndView create(@ModelAttribute usuarioJson json, HttpServletRequest request){
+        ModelAndView modelinho = new ModelAndView("login/criarConta");
         usuarios.Salvar(json);
-        return null;
+        return modelinho;
     }
 }
