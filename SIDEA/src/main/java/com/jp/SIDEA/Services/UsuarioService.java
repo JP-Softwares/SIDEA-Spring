@@ -1,5 +1,6 @@
 package com.jp.SIDEA.Services;
 
+import com.jp.SIDEA.Controller.LoginController;
 import com.jp.SIDEA.Controller.UsuarioController;
 import com.jp.SIDEA.Models.Denuncia;
 import com.jp.SIDEA.Models.Usuario;
@@ -16,7 +17,7 @@ public class UsuarioService {
 
 
     @Autowired
-    private UsuarioController usuCont;
+    private LoginController usuCont;
 
     public Usuario Salvar(usuarioJson json){
         Usuario novoUsuario = new Usuario();

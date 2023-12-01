@@ -15,8 +15,7 @@ public class DenunciaController {
     
     @GetMapping
     public ModelAndView denunciaView(){
-        ModelAndView modelinho = new ModelAndView("oi");
-        modelinho.addObject("frase", "Quando a educação não é libertadora, o sonho do oprimido é se tornar o opressor");
+        ModelAndView modelinho = new ModelAndView("denuncia");
         return modelinho;
     }
 }
