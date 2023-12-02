@@ -7,6 +7,7 @@
     --cor-secundaria: rgb(31, 27, 27);
     --input-background-color-gray: #ecf0f1;
     --input-background-color-white: #fff;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container {
@@ -76,6 +77,19 @@
 
 .div_entrada:focus-within {
     border-color: #000;
+}
+
+.div_atributo {
+    width: 100px;
+    padding-right: 2%;
+}
+
+.div_atributo > label {
+    text-align: right;
+    display: block;
+    width: auto;
+    margin: 0;
+    font-weight: 800;
 }
 
 input[type=submit] {
@@ -213,6 +227,10 @@ input[type=submit] {
     font-size: 14px;
 }
 
+.formCadastro {
+    width: 350px;
+}
+
 input:-webkit-autofill {
     --webkit-box-shadow: 0 0 0px 1000px #ecf0f1 inset !important;
     --webkit-text-fill-color: #000 !important;
@@ -228,7 +246,6 @@ input:-webkit-autofill {
 
 .label-input:focus-within {
     background-color: var(--input-background-color-white); 
-
 }
 
 .icon-modify {
