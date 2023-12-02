@@ -29,6 +29,16 @@ public class LoginController {
         return modelinho;
     }
 
+    @PostMapping
+    public ModelAndView LoginTry(@ModelAttribute loginJson json, HttpServletRequest request){
+        if(usuarios.BuscaPorLogin(json) == true) {
+            ModelAndView modelinho = new ModelAndView("redirect:/denuncia");
+            return modelinho;
+        }
+        ModelAndView modelinho = new ModelAndView("login/login");
+        return modelinho;
+    }
+
     @GetMapping("/criarConta")
     public ModelAndView createView(){
         ModelAndView modelinho = new ModelAndView("login/criarConta");
@@ -37,7 +47,7 @@ public class LoginController {
 
     @PostMapping("/criarConta")
     public ModelAndView create(@ModelAttribute usuarioJson json, HttpServletRequest request){
-        ModelAndView modelinho = new ModelAndView("login/criarConta");
+        ModelAndView modelinho = new ModelAndView("redirect:/Login");
         usuarios.Salvar(json);
         return modelinho;
     }
