@@ -23,26 +23,24 @@ public class UsuarioService {
         Usuario novoUsuario = new Usuario();
         novoUsuario.setLogin(json.login());
         try{
-            novoUsuario.setSenha(criptos.cripto(json.senha()));
+            novoUsuario.setSenha(criptos.criptografar(json.senha()));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        System.out.println(json.login());
-
         novoUsuario.setNome(json.nome());
         novoUsuario.setEmail(json.email());
         Usuario usu = usuarios.save(novoUsuario);
         return usu;
     }
 
-    public boolean BuscaPorLogin(loginJson json) {
+    public boolean BuscaPorLogin(loginJson json) throws Exception {
         Optional<Usuario> novoUsuario = Optional.ofNullable(usuarios.findByLogin(json.cpf()));
         if (novoUsuario.isPresent()) {
             Usuario newUser = usuarios.findByLogin(json.cpf());
-            if (json.senha().equals(newUser.getSenha())) {
+            if (json.senha().equals(criptos.descriptografar(newUser.getSenha()))) {
                 return true;
             }
-
+            System.out.println(criptos.descriptografar(newUser.getSenha()));
         }
         return false;
     }

@@ -21,16 +21,20 @@ public class LoginController {
     @Autowired
     private UsuarioService usuarios;
 
+    @Autowired
+    private CriptografiaService criptos;
+
 
 
     @GetMapping
-    public ModelAndView LoginView(){
+    public ModelAndView LoginView() throws Exception {
         ModelAndView modelinho = new ModelAndView("login/login");
+        criptos.gerarChaveSecreta();
         return modelinho;
     }
 
     @PostMapping
-    public ModelAndView LoginTry(@ModelAttribute loginJson json, HttpServletRequest request){
+    public ModelAndView LoginTry(@ModelAttribute loginJson json, HttpServletRequest request) throws Exception {
         if(usuarios.BuscaPorLogin(json) == true) {
             ModelAndView modelinho = new ModelAndView("redirect:/denuncia");
             return modelinho;
