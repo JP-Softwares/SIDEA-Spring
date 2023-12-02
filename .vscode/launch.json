@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SideaApplication",
+            "request": "launch",
+            "mainClass": "com.jp.SIDEA.SideaApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-SideaApplication<SIDEA>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
