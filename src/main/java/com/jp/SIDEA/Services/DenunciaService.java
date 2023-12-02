@@ -16,8 +16,20 @@ public class DenunciaService {
     public Denuncia Salvar(denunciajson json){
         Denuncia den = new Denuncia();
         den.setSigilo(json.sigilo());
-
-        return den;
+        den.setCEP(json.cep());
+        den.setLogradouro(json.logradouro());
+        den.setAtividade_categoria(json.atividade_categoria());
+        den.setBairro(json.bairro());
+        den.setMunicipio(json.municipio());
+        den.setReferencia(json.referencia());
+        den.setLatitude(json.latitude());
+        den.setLongitude(json.longitude());
+        den.setData_ocorrido(json.dataDoOcorrido());
+        den.setDescricao(json.descricao());
+        den.setProvavel_criminoso(json.provavelCriminoso());
+        den.setOutras_informacoes(json.outrasInformacoes());
+        Denuncia envio = denuncias.save(den);
+        return envio;
     }
 
 }
