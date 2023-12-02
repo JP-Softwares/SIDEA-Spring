@@ -36,7 +36,7 @@ public class LoginController {
     @PostMapping
     public ModelAndView LoginTry(@ModelAttribute loginJson json, HttpServletRequest request) throws Exception {
         if(usuarios.BuscaPorLogin(json) == true) {
-            ModelAndView modelinho = new ModelAndView("redirect:/denuncia");
+            ModelAndView modelinho = new ModelAndView("redirect:/home");
             return modelinho;
         }
         ModelAndView modelinho = new ModelAndView("login/login");
