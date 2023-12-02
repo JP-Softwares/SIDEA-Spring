@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Profile;
 @SpringBootApplication
 public class SideaApplication {
 
-	@Profile("prod")
 	public static void main(String[] args) {
 		SpringApplication.run(SideaApplication.class, args);
 	}
