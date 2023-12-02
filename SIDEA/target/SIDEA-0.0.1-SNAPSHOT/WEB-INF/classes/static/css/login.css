@@ -5,6 +5,8 @@
     padding: 0;
     box-sizing: border-box;
     --cor-secundaria: rgb(31, 27, 27);
+    --input-background-color-gray: #ecf0f1;
+    --input-background-color-white: #fff;
 }
 
 .container {
@@ -23,7 +25,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    box-shadow: 5px 5px 10px #00000038;
+    box-shadow: 5px 5px 15px 5px #00000038;
 }
 .content::before {
     content: "";
@@ -41,14 +43,39 @@
     left: 0;
 }
 
-
-.input_entrada {
-    padding:5px;
-    pointer-events: auto;
+.campo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    width: 100%;
 }
 
-.input_entrada:focus ~ .label-input {
-    border: 1px solid #000;
+.input_entrada {
+    padding-left:5px;
+    background-color: var(--input-background-color-gray);
+}
+
+.div_entrada {
+    margin-bottom: 1%;
+    border: 1px solid #c9c9c9;
+    border-radius: 7px;
+    width: 100%;
+    transition: border-color .4s;
+}
+
+.div_cadastro {
+    width: 80%;
+}
+
+.input_entrada:focus {
+    outline: none;
+    background-color: var(--input-background-color-white);
+}
+
+.div_entrada:focus-within {
+    border-color: #000;
 }
 
 input[type=submit] {
@@ -73,6 +100,7 @@ input[type=submit] {
     color: var(--cor-secundaria);
     font-weight: 800;
     padding-bottom: 50px;
+    font-size: 3em;
 }
 .description {
     font-size: 14px;
@@ -98,33 +126,29 @@ input[type=submit] {
     margin-top: 1rem;
 }
 
-form {
-    align-items: center;
-}
-
 .btn-primary {
     width: 200px;
     height: 40px;
     font-weight: 600;
     background-color: var(--cor-secundaria);
     transition: background-color .5s;
-    box-shadow: 5px 5px 10px #00000038;
+    box-shadow: 0 0 15px 5px #00000038;
 }
 .btn-primary:hover {
     background-color: #fff;
     color: var(--cor-secundaria);
 }
 .btn-second {
+    margin-top: 25%;
     width: 200px;
     height: 40px;
     font-weight: 600;
     color: #000;
     background-color: #fff;
     transition: background-color .5s;
-    box-shadow: 5px 5px 10px #00000038;
 }
 .btn-second:hover {
-    background-color: #000000;
+    background-color: #000a44;
     color: #fff;
 }
 .first-content {
@@ -175,10 +199,11 @@ form {
     display: flex;
     flex-direction: column;
     width: 55%;
+    align-items: center;
     
 }
 .form input {
-    height: 45px;
+    height: 30px;
     border: none;
     width: 100%;
     background-color: rgb(243, 239, 239); 
@@ -193,11 +218,17 @@ input:-webkit-autofill {
     --webkit-text-fill-color: #000 !important;
 }
 .label-input {
-  background-color: #ecf0f1; 
+  background-color: var(--input-background-color-gray); 
   display: flex;
+  width: 100%;
   align-items: center;
-  margin: 5px;
+  border-radius: 7px;
   padding: 2px;
+}
+
+.label-input:focus-within {
+    background-color: var(--input-background-color-white); 
+
 }
 
 .icon-modify {

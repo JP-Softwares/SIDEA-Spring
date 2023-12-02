@@ -7,10 +7,8 @@ com\jp\SIDEA\Persistencia\DenunciaRepository.class
 com\jp\SIDEA\Services\DenunciaService.class
 com\jp\SIDEA\Controller\UsuarioController.class
 com\jp\SIDEA\Models\Records\usuarioJson.class
-com\jp\SIDEA\Persistencia\TelefoneRepository.class
-com\jp\SIDEA\Services\TelefoneService.class
+com\jp\SIDEA\Models\Records\denunciajson.class
 com\jp\SIDEA\Services\UsuarioService.class
-com\jp\SIDEA\Models\Telefone.class
 com\jp\SIDEA\Models\Usuario.class
 com\jp\SIDEA\Persistencia\ComentarioRepository.class
 com\jp\SIDEA\Models\Denuncia.class
