@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
+<head th:replace="~{base/base-elem :: head-padrao}"></head>
 <head>
     <title>Tela de Login - SIDEA</title>
     <link rel="stylesheet" type="text/css" href="//assets.locaweb.com.br/locastyle/edge/stylesheets/locastyle.css">
-    <link rel="stylesheet" href="../../static/css/login.css"th:href="@{'/css/login.css'}">
+    <link rel="stylesheet" href="../../static/css/login.css" th:href="@{'/css/login.css'}">
 </head>
-<body>
-    <div class="container">
-        <div class="content first-content">
-            <div class="first-column">
-                <h2 class="title title-primary">Bem-vindo de volta!</h2>
-                <p class="description description-primary">Para manter-se conectado conosco,</p>
-                <p class="description description-primary">Faça o login com suas informações pessoais.</p>
-            </div>
-            <div class="second-column">
-                <h2 class="title title-second">Login</h2>
+    <body>
+        <div class="container">
+            <div class="content first-content">
+                <div class="first-column">
+                    <h2 class="title title-primary">Bem-vindo de volta!</h2>
+                    <p class="description description-primary">Para manter-se conectado conosco,</p>
+                    <p class="description description-primary">Faça o login com suas informações pessoais.</p>
+                </div>
+                <div class="second-column">
+                    <h2 class="title title-second">Login</h2>
                     <form class="form" action="/Login" method="post">
                         <div class="div_entrada">
                             <label class="label-input" for="">
-                                <i class="fas fa-user icon-modify"></i>
+                                <i class="fas fa-address-card icon-modify"></i>
                                 <input type="text" class="input_entrada cpf-mask" autocomplete="off" name="cpf" placeholder="CPF">
                             </label>
                         </div>
@@ -43,12 +43,11 @@
                             </button>
                         </a>
                     </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <script type="text/javascript" src="//assets.locaweb.com.br/locastyle/edge/javascripts/locastyle.js"></script>
-    <script th:src="@{'/js/login.js'}"></script>
-    <div th:replace="~{base/base-elem :: script-padrao}"></div>
-</body>
+        <script type="text/javascript" src="//assets.locaweb.com.br/locastyle/edge/javascripts/locastyle.js"></script>
+        <div th:replace="~{base/base-elem :: script-padrao}"></div>
+    </body>
 </html>

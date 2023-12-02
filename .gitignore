@@ -3,7 +3,7 @@ HELP.md
 !**/src/main/**/target/
 !**/src/test/**/target/
 target/
-!target/*.jar
+!.jar
 
 ### STS ###
 .apt_generated

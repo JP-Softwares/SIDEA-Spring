@@ -1,5 +1,7 @@
 package com.jp.SIDEA.Services;
 
+import com.fasterxml.jackson.databind.JsonDeserializer;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.jp.SIDEA.Models.Records.loginJson;
 import com.jp.SIDEA.Models.Records.usuarioJson;
 import com.jp.SIDEA.Models.Usuario;
@@ -7,13 +9,13 @@ import com.jp.SIDEA.Persistencia.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.crypto.SecretKey;
 import java.util.Optional;
 
 @Service
 public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarios;
-
 
     @Autowired
     private CriptografiaService criptos;
@@ -27,6 +29,7 @@ public class UsuarioService {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
         novoUsuario.setNome(json.nome());
         novoUsuario.setEmail(json.email());
         Usuario usu = usuarios.save(novoUsuario);
