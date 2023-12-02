@@ -22,10 +22,11 @@ public class Usuario {
     private String Tipo = "";
     private String telefone = "";
 
-    public Usuario(String login, String senha, String nome, String email){
+    public Usuario(String login, String senha, String nome, String email, String telefone){
         this.login = login;
         this.senha = senha;
         this.nome = nome;
         this.email = email;
+        this.telefone = telefone;
     }
 }
