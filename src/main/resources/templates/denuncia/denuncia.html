@@ -122,6 +122,25 @@
 
     <br>
 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulário de Anexo</title>
+    </head>
+    <body>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Anexe uma Evidência:</label>
+        <input type="file" id="file" name="file" accept=".pdf, .doc, .docx">
+
+        <br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    </body>
+</html>
+
     <!-- Botão de Envio -->
     <button type="submit">Cadastrar</button>
 </form>

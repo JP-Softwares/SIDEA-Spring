@@ -44,6 +44,32 @@
                             </div>
                         </div>
 
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>Telefone com Máscara</title>
+                            <!-- Inclua a biblioteca Inputmask -->
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
+                        </head>
+                        <body>
+
+                        <!-- Campo de Telefone com Máscara -->
+                        <label for="telefone">Telefone:</label>
+                        <input type="text" id="telefone" name="telefone" placeholder="(__) _____-____" />
+
+                        <!-- Inicialização da Máscara -->
+                        <script>
+                            $(document).ready(function(){
+                                // Aplica a máscara ao campo de telefone
+                                $('#telefone').inputmask('(99) 9999-9999[9]', { 'placeholder': ' ' });
+                            });
+                        </script>
+
+                        </body>
+                        </html>
+
                         <!-- Campo Login -->
                         <div class="campo">
                             <div class="div_atributo">

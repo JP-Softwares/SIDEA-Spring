@@ -1,8 +1,10 @@
 com\jp\SIDEA\SideaApplication.class
 com\jp\SIDEA\Persistencia\UsuarioRepository.class
 com\jp\SIDEA\Controller\LoginController.class
+com\jp\SIDEA\Controller\DenunciaController.class
 com\jp\SIDEA\Models\Anexo.class
 com\jp\SIDEA\Persistencia\DenunciaRepository.class
+com\jp\SIDEA\Services\crioptografiaService.class
 com\jp\SIDEA\Services\DenunciaService.class
 com\jp\SIDEA\Controller\UsuarioController.class
 com\jp\SIDEA\Models\Records\usuarioJson.class
