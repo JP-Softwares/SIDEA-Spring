@@ -3,6 +3,7 @@ package com.jp.SIDEA.Models;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Date;
@@ -10,6 +11,7 @@ import java.sql.Date;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
 public class Denuncia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,4 +38,22 @@ public class Denuncia {
     private Usuario executor;
     private int status;
     private String parecer_tec;
+
+
+    public Denuncia(int sigilo, String cep, String logradouro, String atividade_categoria, String bairro, String municipio, String referencia, String latitude, String longitude, Date dataDoOcorrido, String descricao, String provavelCriminoso, String outrasInformacoes){
+        this.sigilo = sigilo;
+        this.CEP = cep;
+        this.logradouro = logradouro;
+        this.atividade_categoria = atividade_categoria;
+        this.bairro = bairro;
+        this.municipio = municipio;
+        this.referencia = referencia;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.data_ocorrido = dataDoOcorrido;
+        this.descricao = descricao;
+        this.provavel_criminoso = provavelCriminoso;
+        this.outras_informacoes = outrasInformacoes;
+    }
+
 }
