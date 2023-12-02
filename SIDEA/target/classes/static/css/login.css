@@ -44,11 +44,24 @@
 
 .input_entrada {
     padding:5px;
-    pointer-events: auto;
 }
 
-.input_entrada:focus ~ .label-input {
-    border: 1px solid #000;
+.div_entrada {
+    margin-bottom: 1%;
+    border: 1px solid #c9c9c9;
+    border-radius: 7px;
+}
+
+.div_entrada {
+    transition: border-color .4s;
+}
+
+.input_entrada:focus {
+    outline: none;
+}
+
+.div_entrada:focus-within {
+    border-color: #000;
 }
 
 input[type=submit] {
@@ -115,16 +128,16 @@ form {
     color: var(--cor-secundaria);
 }
 .btn-second {
+    margin-top: 25%;
     width: 200px;
     height: 40px;
     font-weight: 600;
     color: #000;
     background-color: #fff;
     transition: background-color .5s;
-    box-shadow: 5px 5px 10px #00000038;
 }
 .btn-second:hover {
-    background-color: #000000;
+    background-color: #000a44;
     color: #fff;
 }
 .first-content {
@@ -196,7 +209,7 @@ input:-webkit-autofill {
   background-color: #ecf0f1; 
   display: flex;
   align-items: center;
-  margin: 5px;
+  border-radius: 7px;
   padding: 2px;
 }
 

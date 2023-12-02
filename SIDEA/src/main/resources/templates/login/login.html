@@ -19,15 +19,18 @@
             <div class="second-column">
                 <h2 class="title title-second">Login</h2>
                     <form class="form">
-                        
-                        <label class="label-input" for="">
-                            <i class="fas fa-envelope icon-modify"></i>
-                            <input type="text" class="input_entrada" autocomplete="cpf" name="cpf" placeholder="CPF">
-                        </label>
-                        <label class="label-input" for="">
-                            <i class="fas fa-lock icon-modify"></i>
-                            <input type="password" class="input_entrada" autocomplete="current-password" name="senha" placeholder="Senha">
-                        </label>   
+                        <div class="div_entrada">
+                            <label class="label-input" for="">
+                                <i class="fas fa-envelope icon-modify"></i>
+                                <input id="input_cpf" type="text" class="input_entrada" autocomplete="cpf" name="cpf" placeholder="CPF">
+                            </label>
+                        </div>
+                        <div class="div_entrada">
+                            <label class="label-input" for="">
+                                <i class="fas fa-lock icon-modify"></i>
+                                <input type="password" class="input_entrada" autocomplete="current-password" name="senha" placeholder="Senha">
+                            </label> 
+                        </div>  
                         <a th:href="@{'/Home/index'}">
                             <button id="teste" class="button btn-primary">
                                 Entrar
