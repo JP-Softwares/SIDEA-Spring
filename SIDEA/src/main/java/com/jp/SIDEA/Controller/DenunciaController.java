@@ -15,7 +15,7 @@ public class DenunciaController {
     
     @GetMapping
     public ModelAndView denunciaView(){
-        ModelAndView modelinho = new ModelAndView("denuncia");
+        ModelAndView modelinho = new ModelAndView("denuncia/denuncia");
         return modelinho;
     }
 }
