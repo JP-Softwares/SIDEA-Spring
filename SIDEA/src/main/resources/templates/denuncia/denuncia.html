@@ -1,2 +1,55 @@
-<h1>  Qualquer coisa </h1>
-<p th:text="${frase}"></p>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Denuncia</title>
+    <!-- Adicione links para seus estilos ou folhas de estilo aqui -->
+</head>
+<body>
+
+<h2>Cadastro de Denuncia</h2>
+
+<form action="../denuncia" method="post">
+    <!-- Campo Sigilo -->
+    <label for="Sigilo">Protocolo:</label>
+    <input type="text" id="Sigilo" name="Sigilo" autocomplete="Sigilo" required>
+
+    <br>
+
+    <!-- Campo Sigilo -->
+    <fieldset>
+        <legend>Sigilo?</legend>
+
+        <div>
+            <input type="radio" id="huey" name="drone" value="huey" checked />
+            <label for="huey">Sim</label>
+        </div>
+
+        <div>
+            <input type="radio" id="dewey" name="drone" value="dewey" />
+            <label for="dewey">Não</label>
+        </div>
+    </fieldset>
+
+    <!-- Campo Senha -->
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" autocomplete="new-password" name="senha" required>
+    <br>
+
+    <!-- Campo Nome -->
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" autocomplete="name" name="nome" required>
+    <br>
+
+    <!-- Campo E-mail -->
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" autocomplete="email" name="email" required>
+    <br>
+
+    <!-- Botão de Envio -->
+    <button type="submit">Cadastrar</button>
+</form>
+
+</body>
+</html>
