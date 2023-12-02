@@ -11,8 +11,8 @@
 	<groupId>com.jp</groupId>
 	<artifactId>sidea</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
 	<name>SIDEA</name>
+	<packaging>jar</packaging>
 	<description>SIDEA SPRING</description>
 	<properties>
 		<java.version>17</java.version>
