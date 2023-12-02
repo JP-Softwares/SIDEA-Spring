@@ -25,7 +25,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    box-shadow: 5px 5px 10px #00000038;
+    box-shadow: 5px 5px 15px 5px #00000038;
 }
 .content::before {
     content: "";
@@ -43,9 +43,17 @@
     left: 0;
 }
 
+.campo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    width: 100%;
+}
 
 .input_entrada {
-    padding:5px;
+    padding-left:5px;
     background-color: var(--input-background-color-gray);
 }
 
@@ -54,10 +62,11 @@
     border: 1px solid #c9c9c9;
     border-radius: 7px;
     width: 100%;
+    transition: border-color .4s;
 }
 
-.div_entrada {
-    transition: border-color .4s;
+.div_cadastro {
+    width: 80%;
 }
 
 .input_entrada:focus {
@@ -123,7 +132,7 @@ input[type=submit] {
     font-weight: 600;
     background-color: var(--cor-secundaria);
     transition: background-color .5s;
-    box-shadow: 5px 5px 10px #00000038;
+    box-shadow: 0 0 15px 5px #00000038;
 }
 .btn-primary:hover {
     background-color: #fff;
@@ -194,7 +203,7 @@ input[type=submit] {
     
 }
 .form input {
-    height: 45px;
+    height: 30px;
     border: none;
     width: 100%;
     background-color: rgb(243, 239, 239); 
