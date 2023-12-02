@@ -2,7 +2,8 @@ HELP.md
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-*.class
+target/
+!target/*.jar
 
 ### STS ###
 .apt_generated

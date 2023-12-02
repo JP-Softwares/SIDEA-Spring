@@ -3,6 +3,7 @@
 <head th:replace="~{base/base-elem :: head-padrao}"></head>
 <head>
     <title>Formulário de Cadastro - SIDEA</title>
+    <link rel="stylesheet" type="text/css" href="//assets.locaweb.com.br/locastyle/edge/stylesheets/locastyle.css">
     <link rel="stylesheet" href="../../static/css/login.css" th:href="@{'/css/login.css'}">
 </head>
     <body>
@@ -51,7 +52,7 @@
                             <div class="div_entrada div_cadastro">
                                 <label class="label-input" for="">
                                     <i class="fas fa-key icon-modify"></i>
-                                    <input class="input_entrada" type="text" id="telefone" name="telefone" placeholder="(__) _____-____">
+                                    <input class="input_entrada cel-sp-mask" type="text" id="telefone" name="telefone" placeholder="(__) _____-____">
                                 </label>
                             </div>
                         </div>
@@ -68,7 +69,8 @@
                             <div class="div_entrada div_cadastro">
                                 <label class="label-input" for="">
                                     <i class="fas fa-user icon-modify"></i>
-                                    <input class="input_entrada" data-mask="000.000.000-00" type="text" id="cpf" name="login" autocomplete="cpf" required>                            </label>
+                                    <input class="input_entrada cpf-mask" data-mask="000.000.000-00" type="text" id="cpf" name="login" autocomplete="off" required>
+                                </label>
                             </div>
                         </div>
                         <!-- Campo Senha -->
@@ -90,12 +92,8 @@
                 </div>
             </div>
         </div>
-        <script>
-            $(document).ready(function(){
-                // Aplica a máscara ao campo de telefone
-                $('#telefone').inputmask('(99) 9999-9999[9]', { 'placeholder': ' ' });
-            });
-        </script>
+
+        <script type="text/javascript" src="//assets.locaweb.com.br/locastyle/edge/javascripts/locastyle.js"></script>
         <div th:replace="~{base/base-elem :: script-padrao}"></div>
     </body>
 </html>
