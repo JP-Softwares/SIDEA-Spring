@@ -1,15 +1,39 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hello Bulma!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="../../static/Home/css/home.css" th:href="@{'/css/home.css'}">
-  </head>
-  <body>
-    <div id="topbar">
-        oi
-    </div>
-  </body>
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Bem-vindo à Plataforma de Denúncias Ambientais</h1>
+
+<!-- Botão para Alterar Usuário -->
+<button onclick="window.location.href='alterar_usuario.html'">Alterar Usuário</button>
+
+<!-- Botão para Cadastrar Denúncia -->  
+<button onclick="window.location.href='cadastrar_denuncia.html'">Cadastrar Denúncia</button>
+
+<!-- Botão para Visualizar Denúncias Cadastradas -->
+<button onclick="window.location.href='denuncias_cadastradas.html'">Visualizar Denúncias Cadastradas</button>
+
+</body>
 </html>
