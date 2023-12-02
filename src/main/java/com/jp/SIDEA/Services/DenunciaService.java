@@ -13,6 +13,9 @@ public class DenunciaService {
     @Autowired
     private DenunciaRepository denuncias;
 
+    @Autowired
+    private LogadoService logado;
+
     public Denuncia Salvar(denunciajson json){
         Denuncia den = new Denuncia();
         den.setSigilo(json.sigilo());
@@ -30,6 +33,7 @@ public class DenunciaService {
         den.setProvavel_criminoso(json.provavelCriminoso());
         den.setOutras_informacoes(json.outrasInformacoes());
         Denuncia envio = denuncias.save(den);
+        den.setAutor(logado.getLogado());
         return envio;
     }
 
