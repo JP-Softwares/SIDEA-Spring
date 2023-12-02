@@ -25,7 +25,8 @@ public class Denuncia {
     private String referencia;
     private String latitude;
     private String longitude;
-    private String atividade_categoria;
+    private String atividade;
+    private String categoria;
     private String descricao;
     private String outras_informacoes;
     private Date data_ocorrido;
@@ -40,11 +41,12 @@ public class Denuncia {
     private String parecer_tec;
 
 
-    public Denuncia(int sigilo, String cep, String logradouro, String atividade_categoria, String bairro, String municipio, String referencia, String latitude, String longitude, Date dataDoOcorrido, String descricao, String provavelCriminoso, String outrasInformacoes){
+    public Denuncia(int sigilo, String cep, String logradouro, String categoria,String atividade, String bairro, String municipio, String referencia, String latitude, String longitude, Date dataDoOcorrido, String descricao, String provavelCriminoso, String outrasInformacoes){
         this.sigilo = sigilo;
         this.CEP = cep;
         this.logradouro = logradouro;
-        this.atividade_categoria = atividade_categoria;
+        this.atividade = atividade;
+        this.categoria = categoria;
         this.bairro = bairro;
         this.municipio = municipio;
         this.referencia = referencia;
