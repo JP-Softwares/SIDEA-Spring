@@ -3,6 +3,7 @@ package com.jp.SIDEA.Controller;
 import com.jp.SIDEA.Models.Records.loginJson;
 import com.jp.SIDEA.Models.Records.usuarioJson;
 import com.jp.SIDEA.Services.CriptografiaService;
+import com.jp.SIDEA.Services.LogadoService;
 import com.jp.SIDEA.Services.UsuarioService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,8 @@ public class LoginController {
     @Autowired
     private CriptografiaService criptos;
 
+    private LogadoService logado;
+
 
 
     @GetMapping
@@ -37,6 +40,7 @@ public class LoginController {
     public ModelAndView LoginTry(@ModelAttribute loginJson json, HttpServletRequest request) throws Exception {
         if(usuarios.BuscaPorLogin(json) == true) {
             ModelAndView modelinho = new ModelAndView("redirect:/home");
+            logado.setLogado(usuarios.findByCPF(json.cpf()));
             return modelinho;
         }
         ModelAndView modelinho = new ModelAndView("login/login");

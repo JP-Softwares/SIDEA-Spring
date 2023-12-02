@@ -28,7 +28,7 @@ public class UsuarioService {
         }
         novoUsuario.setNome(json.nome());
         novoUsuario.setEmail(json.email());
-        novoUsuario.setEmail(json.telefone());
+        novoUsuario.setTelefone(json.telefone());
         novoUsuario.setTipo("denunciante");
         Usuario usu = usuarios.save(novoUsuario);
         return usu;
@@ -45,4 +45,10 @@ public class UsuarioService {
         }
         return false;
     }
+
+    public Usuario findByCPF(String cpf){
+        Usuario newUser = usuarios.findByLogin(cpf);
+        return  newUser;
+    }
+
 }
