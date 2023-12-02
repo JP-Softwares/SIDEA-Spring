@@ -11,13 +11,15 @@ import com.jp.SIDEA.Persistencia.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarios;
 
 
-    public Usuario Salvar(usuarioJson json){
+    public Usuario Salvar(usuarioJson json) {
         Usuario novoUsuario = new Usuario();
         novoUsuario.setLogin(json.login());
         System.out.println(json.login());
@@ -28,11 +30,14 @@ public class UsuarioService {
         return usu;
     }
 
-    public boolean BuscaPorLogin(loginJson json){
-        Usuario novoUsuario = usuarios.findByLogin(json.cpf());
-        if(json.senha().equals(novoUsuario.getSenha())){
-            System.out.println(novoUsuario.getSenha());
-            return true;
+    public boolean BuscaPorLogin(loginJson json) {
+        Optional<Usuario> novoUsuario = Optional.ofNullable(usuarios.findByLogin(json.cpf()));
+        if (novoUsuario.isPresent()) {
+            Usuario newUser = usuarios.findByLogin(json.cpf());
+            if (json.senha().equals(newUser.getSenha())) {
+                return true;
+            }
+
         }
         return false;
     }

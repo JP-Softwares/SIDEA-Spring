@@ -14,14 +14,13 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(unique = true)
     private String login = "";
     private String senha = "";
     private String nome = "";
     private String email = "";
-    private String cargo = "";
     private String Tipo = "";
-    @OneToOne
-    private Telefone telefone;
+    private String telefone = "";
 
     public Usuario(String login, String senha, String nome, String email){
         this.login = login;

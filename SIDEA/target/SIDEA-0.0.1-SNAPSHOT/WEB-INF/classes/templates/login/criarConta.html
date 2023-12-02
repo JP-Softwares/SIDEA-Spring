@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <!-- Adicione links para seus estilos ou folhas de estilo aqui -->
+</head>
+<body>
+
+    <h2>Cadastro</h2>
+
+    <form action="../Login/criarConta" method="post">
+        <!-- Campo Login -->
+        <label for="login">CPF:</label>
+        <input type="text" id="login" name="login" autocomplete="cpf" required>
+
+        <br>
+
+        <!-- Campo Senha -->
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" autocomplete="new-password" name="senha" required>
+        <br>
+
+        <!-- Campo Nome -->
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" autocomplete="name" name="nome" required>
+        <br>
+
+        <!-- Campo E-mail -->
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" autocomplete="email" name="email" required>
+        <br>
+
+        <!-- Botão de Envio -->
+        <button type="submit">Cadastrar</button>
+    </form>
+
+</body>
+</html>
