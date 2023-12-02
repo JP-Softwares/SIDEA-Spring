@@ -14,27 +14,26 @@
 
     <!-- Campo Sigilo -->
     <label>Cadastro em Siligo: </label>
-    <select class="js-example-basic-single" name="state">
-        <option value="1">Sim</option>
-        <option value="0">Não</option>
+    <select class="js-example-basic-single" name="sigilo">
+        <option value=1>Sim</option>
+        <option value=0>Não</option>
     </select>
-
     <br>
 
     <!-- Campo CEP -->
     <label for="cep">CEP:</label>
-    <input type="text" id="cep" name="CEP" autocomplete="CEP" required>
+    <input type="text" id="cep" name="cep" autocomplete="CEP" required>
 
     <br>
 
     <!-- Campo Logradouro -->
     <label for="logradouro">Logradouro:</label>
-    <input type="Logradouro" id="logradouro" autocomplete="Logradouro" name="Logradouro" required>
+    <input type="Logradouro" id="logradouro" autocomplete="Logradouro" name="logradouro" required>
     <br>
 
     <!-- Campo Categoria -->
     <label>Categoria da Denuncia: </label>
-    <select class="js-example-basic-single" name="atividade_categoria">
+    <select class="js-example-basic-single" name="atividade">
         <option value="Fauna">Fauna</option>
         <option value="Flora">Flora</option>
         <option value="Poluição">Poluição</option>
@@ -46,7 +45,7 @@
 
     <!-- Campo Subcategoria -->
     <label>Subcategoria da Denuncia: </label>
-    <select class="js-example-basic-single" name="atividade_categoria">
+    <select class="js-example-basic-single" name="categoria">
         <option value="Fauna">Fauna</option>
         <option value="Flora">Flora</option>
         <option value="Poluição">Poluição</option>
@@ -58,91 +57,62 @@
 
     <!-- Campo Bairro -->
     <label for="bairro">Bairro:</label>
-    <input type="text" id="bairro" name="Bairro" autocomplete="Bairro" required>
+    <input type="text" id="bairro" name="bairro" autocomplete="bairro" required>
 
     <br>
 
     <!-- Campo Municipio -->
     <label for="municipio">Municipio:</label>
-    <input type="text" id="municipio" name="Municipio" autocomplete="Municipio" required>
+    <input type="text" id="municipio" name="municipio" autocomplete="municipio" required>
 
     <br>
 
     <!-- Campo Referencia -->
     <label for="referencia">Referencia:</label>
-    <input type="text" id="referencia" name="Referencia" autocomplete="Referencia" required>
+    <input type="text" id="referencia" name="referencia" autocomplete="Referencia" required>
 
     <br>
 
     <!-- Campo Latitude -->
     <label for="latitude">Latitude:</label>
-    <input type="text" id="latitude" name="Latitude" autocomplete="Latitude" required>
+    <input type="text" id="latitude" name="latitude" autocomplete="Latitude" required>
 
     <br>
 
     <!-- Campo Longitude -->
     <label for="longitude">Longitude:</label>
-    <input type="text" id="longitude" name="Longitude" autocomplete="Longitude" required>
+    <input type="text" id="longitude" name="longitude" autocomplete="Longitude" required>
 
     <br>
 
     <!-- Campo Data do Ocorrido -->
     <label for="dataDoOcorrido">Data do Ocorrido:</label>
-    <input type="date" id="dataDoOcorrido" name="Data do Ocorrido" autocomplete="Data do Ocorrido" required>
+    <input type="date" id="dataDoOcorrido" name="dataDoOcorrido" autocomplete="Data do Ocorrido" required>
 
     <br>
 
     <!-- Campo Descrição -->
     <label for="descricao">Descrição:</label>
-    <input type="text" id="descricao" name="Descrição" autocomplete="Descrição" required>
+    <input type="text" id="descricao" name="descrição" autocomplete="Descrição" required>
 
     <br>
 
     <!-- Campo Provavel Criminoso -->
     <label for="provavelCriminoso">Provavel Criminoso:</label>
-    <input type="text" id="provavelCriminoso" name="Provavel Criminoso" autocomplete="Provavel Criminoso" required>
+    <input type="text" id="provavelCriminoso" name="provavelCriminoso" autocomplete="Provavel Criminoso" required>
 
     <br>
 
     <!-- Campo Outras Informações -->
     <label for="outrasInformacoes">Outras Informações:</label>
-    <input type="text" id="outrasInformacoes" name="Outras Informações" autocomplete="Outras Informações" required>
+    <input type="text" id="outrasInformacoes" name="outrasInformações" autocomplete="Outras Informações" required>
 
     <br>
-
-    <!-- Campo Anexo -->
-    <label for="Anexos">Anexo:</label>
-    <input type="text" id="Anexos" name="Anexo" autocomplete="Anexo" required>
-
-    <br>
-
-    <!-- Campo Comentários -->
-    <label for="Comentarios">Comentários:</label>
-    <input type="text" id="Comentarios" name="Comentarios" autocomplete="Comentarios" required>
-
-    <br>
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Formulário de Anexo</title>
-    </head>
-    <body>
-
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <label for="file">Anexe uma Evidência:</label>
-        <input type="file" id="file" name="file" accept=".pdf, .doc, .docx">
-
-        <br><br>
-
-        <input type="submit" value="Enviar">
-    </form>
-
-    </body>
-</html>
 
     <!-- Botão de Envio -->
     <button type="submit">Cadastrar</button>
+    <!-- Campo Anexo -->
+
 </form>
 </body>
 </html>
