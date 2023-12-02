@@ -4,12 +4,12 @@ com\jp\SIDEA\Controller\LoginController.class
 com\jp\SIDEA\Controller\DenunciaController.class
 com\jp\SIDEA\Models\Anexo.class
 com\jp\SIDEA\Persistencia\DenunciaRepository.class
-com\jp\SIDEA\Services\crioptografiaService.class
 com\jp\SIDEA\Services\DenunciaService.class
 com\jp\SIDEA\Controller\UsuarioController.class
 com\jp\SIDEA\Models\Records\usuarioJson.class
 com\jp\SIDEA\Models\Records\denunciajson.class
 com\jp\SIDEA\Services\UsuarioService.class
+com\jp\SIDEA\Services\CriptografiaService.class
 com\jp\SIDEA\Models\Usuario.class
 com\jp\SIDEA\Persistencia\ComentarioRepository.class
 com\jp\SIDEA\Models\Denuncia.class
