@@ -18,7 +18,7 @@
             </div>
             <div class="second-column">
                 <h2 class="title title-second">Login</h2>
-                    <form class="form">
+                    <form class="form" action="/Login" method="post">
                         <div class="div_entrada">
                             <label class="label-input" for="">
                                 <i class="fas fa-envelope icon-modify"></i>
@@ -31,11 +31,11 @@
                                 <input type="password" class="input_entrada" autocomplete="current-password" name="senha" placeholder="Senha">
                             </label> 
                         </div>  
-                        <a th:href="@{'/Home/index'}">
-                            <button id="teste" class="button btn-primary">
+                        <a>
+                            <button type="submit" id="teste" class="button btn-primary">
                                 Entrar
                             </button>
-                        </a>                  
+                        </a>
                         
                     </form>
                     <div class="div-form-centralizado">
