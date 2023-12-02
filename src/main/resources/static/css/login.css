@@ -10,12 +10,16 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+body {
+    background-color: rgb(224, 224, 224);
+}
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #fff;
+
 }
 .content {
     background-color: #fff;
