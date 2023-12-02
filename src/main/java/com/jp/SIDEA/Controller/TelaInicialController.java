@@ -8,9 +8,15 @@ import org.springframework.web.servlet.ModelAndView;
 public class TelaInicialController {
     
 
-    @GetMapping
+    @GetMapping("/home")
     public ModelAndView homeView(){
-        ModelAndView modelinho = new ModelAndView("home");
+        ModelAndView modelinho = new ModelAndView("home/home");
+        return modelinho;
+    }
+
+    @GetMapping
+    public ModelAndView redirect(){
+        ModelAndView modelinho = new ModelAndView("redirect:/Login");
         return modelinho;
     }
 }
