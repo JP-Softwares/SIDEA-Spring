@@ -14,10 +14,7 @@ import org.springframework.stereotype.Service;
 public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarios;
-
-
-    @Autowired
-    private LoginController usuCont;
+    
 
     public Usuario Salvar(usuarioJson json){
         Usuario novoUsuario = new Usuario();
