@@ -32,8 +32,8 @@ public class DenunciaService {
         den.setDescricao(json.descricao());
         den.setProvavel_criminoso(json.provavelCriminoso());
         den.setOutras_informacoes(json.outrasInformacoes());
-        Denuncia envio = denuncias.save(den);
         den.setAutor(logado.getLogado());
+        Denuncia envio = denuncias.save(den);
         return envio;
     }
 

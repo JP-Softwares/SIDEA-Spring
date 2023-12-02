@@ -41,7 +41,7 @@ public class Denuncia {
     private String parecer_tec;
 
 
-    public Denuncia(int sigilo, String cep, String logradouro, String categoria,String atividade, String bairro, String municipio, String referencia, String latitude, String longitude, Date dataDoOcorrido, String descricao, String provavelCriminoso, String outrasInformacoes){
+    public Denuncia(int sigilo, String cep, String logradouro, String categoria,String atividade, String bairro, String municipio, String referencia, String latitude, String longitude, Date dataDoOcorrido, String descricao, String provavelCriminoso, String outrasInformacoes, Usuario autor){
         this.sigilo = sigilo;
         this.CEP = cep;
         this.logradouro = logradouro;
@@ -56,6 +56,7 @@ public class Denuncia {
         this.descricao = descricao;
         this.provavel_criminoso = provavelCriminoso;
         this.outras_informacoes = outrasInformacoes;
+        this.autor = autor;
     }
 
 }

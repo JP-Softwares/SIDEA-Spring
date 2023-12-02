@@ -25,6 +25,7 @@ public class LoginController {
     @Autowired
     private CriptografiaService criptos;
 
+    @Autowired
     private LogadoService logado;
 
 
