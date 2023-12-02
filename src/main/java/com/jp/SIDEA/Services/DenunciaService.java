@@ -18,7 +18,7 @@ public class DenunciaService {
         den.setSigilo(json.sigilo());
         den.setCEP(json.cep());
         den.setLogradouro(json.logradouro());
-        den.setAtividade_categoria(json.atividade_categoria());
+        den.setAtividade_categoria(json.atividade() + json.categoria());
         den.setBairro(json.bairro());
         den.setMunicipio(json.municipio());
         den.setReferencia(json.referencia());
