@@ -9,7 +9,7 @@ RUN mvn -f ./pom.xml clean package
 #
 # Package stage
 #
-FROM openjdk:17-jre
+FROM openjdk:17-oracle
 COPY --from=build ./target/sidea-0.0.1-SNAPSHOT.jar ./demo.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","./demo.jar"]
