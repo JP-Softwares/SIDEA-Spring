@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../../static/controleUsarios/css/controleUsarios.css"
+          th:href="@{'/css/controleUsarios.css'}">
+    <title>Controle de Usuarios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Controle de Usuários</h1>
+
+<div class="table-container">
+    <table class="table is-striped">
+        <thead>
+        <tr>
+            <th scope="col">Login</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Editar</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="usuario : ${listUser}">
+            <td th:text="${usuario.getLogin()}"></td>
+            <td th:text="${usuario.getNome()}"></td>
+            <td th:text="${usuario.getEmail()}"></td>
+            <td th:text="${usuario.getTelefone()}"></td>
+            <td th:text="${usuario.getTipo()}"></td>
+            <td>
+                <a th:href="@{'/home'}">
+                    <button id="editarUsuario" class="button btn-second" >
+                        editar
+                    </button>
+                </a>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
