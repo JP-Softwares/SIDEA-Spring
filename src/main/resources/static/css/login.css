@@ -23,6 +23,7 @@ html, body {
 #Title {
     font-size: calc(32px + 0.390625vw);
     text-align: center;
+    font-weight: 800;
 }
 
 .container-sidea {
