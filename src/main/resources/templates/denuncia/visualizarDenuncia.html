@@ -2,12 +2,10 @@
 <html lang="pt-br">
     <head th:replace="~{base/base-elem :: head-padrao}"></head>
     <head>
-        <title>Cadastro de Denuncia - SIDEA</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title th:text="Denúncia ${denuncia.protocolo} - SIDEA"></title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
         <link rel="stylesheet" href="../../static/css/denuncia.css" th:href="@{'/css/denuncia.css'}">
-        <script th:src="@{'/js/denuncia.js'}" src="../../static/js/denuncia.js"></script>
+        <script th:src="@{'/js/visualizarDenuncia.js'}" src="../../static/js/visualizarDenuncia.js"></script>
     </head>
     <body>
 
@@ -24,11 +22,8 @@
                         </div>
                         <div class="field-body">
                         <div class="field">
-                            <div class="select">
-                                <select tabindex="1" name="sigilo">
-                                    <option value=1>Sim</option>
-                                    <option value=0>Não</option>
-                                </select>
+                            <div class="control">
+                                <input tabindex="1" th:text="${denuncia.sigilo}" class="input" type="text" name="sigilo" autocomplete="off" required disabled>
                             </div>
                         </div>
                         </div>
@@ -42,7 +37,7 @@
                         <div class="field-body">
                             <div class="field">
                                 <div class="control">
-                                    <textarea tabindex="2" class="textarea" name="descricao" autocomplete="off" required></textarea>
+                                    <textarea tabindex="2" th:text="${denuncia.descricao}" class="textarea" name="descricao" autocomplete="off" required disabled></textarea>
                                 </div>
                             </div>
                         </div>
@@ -56,7 +51,7 @@
                         <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="3" class="input" type="text" id="cep" name="cep" autocomplete="off" required>
+                                <input tabindex="3" th:text="${denuncia.cep}" class="input" type="text" id="cep" name="cep" autocomplete="off" required disabled>
                             </div>
                         </div>
                         </div>
@@ -70,7 +65,7 @@
                         <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="4" class="input" type="Logradouro" id="logradouro" autocomplete="off" name="logradouro" required>
+                                <input tabindex="4" th:text="${denuncia.logradouro}" class="input" type="text" id="logradouro" autocomplete="off" name="logradouro" required>
                             </div>
                         </div>
                         </div>
@@ -83,14 +78,8 @@
                         </div>
                         <div class="field-body">
                         <div class="field">
-                            <div class="select">
-                                <select tabindex="5" name="atividade">
-                                    <option value="Fauna">Fauna</option>
-                                    <option value="Flora">Flora</option>
-                                    <option value="Poluição">Poluição</option>
-                                    <option value="Ornamento Urbano e Patrimônio Cultural">Ornamento Urbano e Patrimônio Cultural</option>
-                                    <option value="Administração Ambiente">Administração Ambiente</option>
-                                </select>
+                            <div class="control">
+                                <input tabindex="5" th:text="${denuncia.atividade}" class="input" type="text" autocomplete="off" name="atividade" required disabled>
                             </div>
                         </div>
                         </div>
@@ -103,14 +92,8 @@
                         </div>
                         <div class="field-body">
                         <div class="field">
-                            <div class="select">
-                                <select tabindex="6" name="categoria">
-                                    <option value="Fauna">Fauna</option>
-                                    <option value="Flora">Flora</option>
-                                    <option value="Poluição">Poluição</option>
-                                    <option value="Ornamento Urbano e Patrimônio Cultural">Ornamento Urbano e Patrimônio Cultural</option>
-                                    <option value="Administração Ambiente">Administração Ambiente</option>
-                                </select>
+                            <div class="control">
+                                <input tabindex="6" th:text="${denuncia.categoria}" class="input" type="text" autocomplete="off" name="categoria" required disabled>
                             </div>
                         </div>
                         </div>
@@ -124,7 +107,7 @@
                         <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="7" class="input" type="text" id="bairro" name="bairro" autocomplete="off" required>
+                                <input tabindex="7" th:text="${denuncia.bairro}" class="input" type="text" id="bairro" name="bairro" autocomplete="off" required disabled>
                             </div>
                         </div>
                         </div>
@@ -138,7 +121,7 @@
                         <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="8" class="input" type="text" id="municipio" name="municipio" autocomplete="off" required>
+                                <input tabindex="8" th:text="${denuncia.municipio}" class="input" type="text" id="municipio" name="municipio" autocomplete="off" required disabled>
                             </div>
                         </div>
                         </div>
@@ -152,7 +135,7 @@
                         <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="9" class="input" type="text" id="referencia" name="referencia" autocomplete="off" required>
+                                <input tabindex="9" th:text="${denuncia.referencia}" class="input" type="text" id="referencia" name="referencia" autocomplete="off" required disabled>
                             </div>
                         </div>
                         </div>
@@ -166,7 +149,7 @@
                         <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="10" class="input" type="text" id="latitude" name="latitude" autocomplete="off" required>
+                                <input tabindex="10" th:text="${denuncia.latitude}" class="input" type="text" id="latitude" name="latitude" autocomplete="off" required disabled>
                             </div>
                         </div>
                         </div>
@@ -180,7 +163,7 @@
                         <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="11" class="input" type="text" id="longitude" name="longitude" autocomplete="off" required>
+                                <input tabindex="11" th:text="${denuncia.longitude}" class="input" type="text" id="longitude" name="longitude" autocomplete="off" required disabled>
                             </div>
                         </div>
                         </div>
@@ -194,7 +177,7 @@
                         <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="12" class="input" type="date" id="dataDoOcorrido" name="dataDoOcorrido" autocomplete="off" required>
+                                <input tabindex="12" th:text="${denuncia.data_ocorrido}" class="input" type="date" id="dataDoOcorrido" name="dataDoOcorrido" autocomplete="off" required disabled>
                             </div>
                         </div>
                         </div>
@@ -208,7 +191,7 @@
                         <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="13" class="input" type="text" id="provavelCriminoso" name="provavelCriminoso" autocomplete="off" required>
+                                <input tabindex="13" th:text="${denuncia.provavel_criminoso}" class="input" type="text" id="provavelCriminoso" name="provavelCriminoso" autocomplete="off" required disabled>
                             </div>
                         </div>
                         </div>
@@ -224,7 +207,7 @@
                                 <div class="control">
                                     <div class="file has-name">
                                         <label tabindex="14" class="file-label">
-                                            <input class="file-input" id="anexo" type="file" name="imagem">
+                                            <input class="file-input" id="anexo" type="file" name="imagem" disabled>
                                             <span class="file-cta">
                                                 <span class="file-icon">
                                                     <i class="fas fa-upload"></i>
