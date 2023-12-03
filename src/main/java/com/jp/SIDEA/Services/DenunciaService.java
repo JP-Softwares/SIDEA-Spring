@@ -2,7 +2,9 @@ package com.jp.SIDEA.Services;
 
 
 import com.jp.SIDEA.Models.Denuncia;
+import com.jp.SIDEA.Models.Records.denuncia2json;
 import com.jp.SIDEA.Models.Records.denunciajson;
+import com.jp.SIDEA.Models.Records.filtroJson;
 import com.jp.SIDEA.Models.Usuario;
 import com.jp.SIDEA.Persistencia.DenunciaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,12 +67,19 @@ public class DenunciaService {
         return denuncias.listarTodos().orElseGet(ArrayList::new);
     }
 
-    public List<Denuncia> ListarAbertas(){
-        return denuncias.listarAbertas().orElseGet(ArrayList::new);
+    public List<Denuncia> ListarFiltradasTotal(filtroJson json){
+        return denuncias.listarFiltradasTotal(json.protocolo(), json.municipio(), json.categoria(), json.status()).orElseGet(ArrayList::new);
     }
 
     public Denuncia obter(Long id){
         return denuncias.findById(id).orElseGet(Denuncia::new);
+    }
+
+    public  Denuncia atualizar(denuncia2json json, Long id){
+        Denuncia den = obter(id);
+        den.setStatus(json.status());
+        den.setParecer_tec(json.parecer_tec());
+        return denuncias.save(den);
     }
 
 }

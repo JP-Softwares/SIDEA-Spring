@@ -13,6 +13,4 @@ public class LogadoService {
 
     private Usuario logado;
 
-
-
 }

@@ -3,6 +3,7 @@ package com.jp.SIDEA.Services;
 import com.jp.SIDEA.Models.Anexo;
 import com.jp.SIDEA.Models.Denuncia;
 import com.jp.SIDEA.Persistencia.AnexoRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,7 @@ import java.nio.file.Paths;
 import java.util.Optional;
 
 @Service
+@Transactional
 public class AnexoService {
     @Autowired
     private AnexoRepository anexos;

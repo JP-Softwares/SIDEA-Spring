@@ -14,9 +14,9 @@
     <div class="content-sidea">
 
         <div class="content-form">
-            <h1 class="title is-1 title-form">Cadastro de Denúncia</h1>
+            <h1 class="title is-1 title-form">Acompanhamento de Denúncia</h1>
 
-            <form class="form" action="../denuncia" method="post" enctype="multipart/form-data">
+            <form class="form" th:action="'../'+${denuncia.id} + '/visualizar/salvar'" method="post" enctype="multipart/form-data">
                 <!-- Campo Sigilo -->
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
@@ -25,7 +25,7 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="1" th:text="${denuncia.sigilo}" class="input" type="text" name="sigilo"
+                                <input tabindex="1" th:value="${denuncia.sigilo}" class="input" type="text" name="sigilo"
                                     autocomplete="off" required disabled>
                             </div>
                         </div>
@@ -40,8 +40,7 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <textarea tabindex="2" th:text="${denuncia.descricao}" class="textarea" name="descricao"
-                                    autocomplete="off" required disabled></textarea>
+                                <textarea tabindex="2" th:text="${denuncia.descricao}" class="textarea" name="descricao"  required disabled></textarea>
                             </div>
                         </div>
                     </div>
@@ -55,7 +54,7 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="3" th:text="${denuncia.CEP}" class="input" type="text" id="cep"
+                                <input tabindex="3" th:value="${denuncia.CEP}" class="input" type="text" id="cep"
                                     name="cep" autocomplete="off" required disabled>
                             </div>
                         </div>
@@ -70,8 +69,8 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="4" th:text="${denuncia.logradouro}" class="input" type="text"
-                                    id="logradouro" autocomplete="off" name="logradouro" required>
+                                <input tabindex="4" th:value="${denuncia.logradouro}" class="input" type="text"
+                                    id="logradouro" autocomplete="off" name="logradouro" required disabled>
                             </div>
                         </div>
                     </div>
@@ -85,7 +84,7 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="5" th:text="${denuncia.atividade}" class="input" type="text"
+                                <input tabindex="5" th:value="${denuncia.atividade}" class="input" type="text"
                                     autocomplete="off" name="atividade" required disabled>
                             </div>
                         </div>
@@ -100,7 +99,7 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="6" th:text="${denuncia.categoria}" class="input" type="text"
+                                <input tabindex="6" th:value="${denuncia.categoria}" class="input" type="text"
                                     autocomplete="off" name="categoria" required disabled>
                             </div>
                         </div>
@@ -115,7 +114,7 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="7" th:text="${denuncia.bairro}" class="input" type="text" id="bairro"
+                                <input tabindex="7" th:value="${denuncia.bairro}" class="input" type="text" id="bairro"
                                     name="bairro" autocomplete="off" required disabled>
                             </div>
                         </div>
@@ -130,7 +129,7 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="8" th:text="${denuncia.municipio}" class="input" type="text"
+                                <input tabindex="8" th:value="${denuncia.municipio}" class="input" type="text"
                                     id="municipio" name="municipio" autocomplete="off" required disabled>
                             </div>
                         </div>
@@ -145,7 +144,7 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="9" th:text="${denuncia.referencia}" class="input" type="text"
+                                <input tabindex="9" th:value="${denuncia.referencia}" class="input" type="text"
                                     id="referencia" name="referencia" autocomplete="off" required disabled>
                             </div>
                         </div>
@@ -160,7 +159,7 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="10" th:text="${denuncia.latitude}" class="input" type="text"
+                                <input tabindex="10" th:value="${denuncia.latitude}" class="input" type="text"
                                     id="latitude" name="latitude" autocomplete="off" required disabled>
                             </div>
                         </div>
@@ -175,7 +174,7 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="11" th:text="${denuncia.longitude}" class="input" type="text"
+                                <input tabindex="11" th:value="${denuncia.longitude}" class="input" type="text"
                                     id="longitude" name="longitude" autocomplete="off" required disabled>
                             </div>
                         </div>
@@ -190,7 +189,7 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="12" th:text="${denuncia.data_ocorrido}" class="input" type="date"
+                                <input tabindex="12" th:value="${denuncia.data_ocorrido}" class="input" type="date"
                                     id="dataDoOcorrido" name="dataDoOcorrido" autocomplete="off" required disabled>
                             </div>
                         </div>
@@ -205,7 +204,7 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <input tabindex="13" th:text="${denuncia.provavel_criminoso}" class="input" type="text"
+                                <input tabindex="13" th:value="${denuncia.provavel_criminoso}" class="input" type="text"
                                     id="provavelCriminoso" name="provavelCriminoso" autocomplete="off" required
                                     disabled>
                             </div>
@@ -223,21 +222,10 @@
                             <div class="control">
                                 <div class="file has-name">
                                     <label tabindex="14" class="file-label">
-                                        <input class="file-input" id="anexo" type="file" name="imagem" disabled>
-                                        <span class="file-cta">
-                                            <span class="file-icon">
-                                                <i class="fas fa-upload"></i>
-                                            </span>
-                                            <span class="file-label" id="anexo-name">
-                                                Escolha um arquivo
-                                            </span>
-                                        </span>
+                                        <a th:href="@{'/denuncia/' + ${denuncia.id} + '/visualizar/imagem'}">
+                                            <button tabindex="17" class="button is-link is-light" type="button">Baixar Anexo</button>
+                                        </a>
                                     </label>
-                                    <!--
-                                        <span class="file-label file-name" id="removefile">
-                                            <i class="fas fa-xmark"></i>
-                                        </span>
-                                        -->
                                 </div>
                             </div>
                         </div>
@@ -254,8 +242,74 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <textarea tabindex="15" class="textarea" name="outrasInformacoes" autocomplete="off"
-                                    required></textarea>
+                                <textarea tabindex="15" class="textarea" name="outrasInformacoes" th:text="${denuncia.outras_informacoes}"
+                                    required disabled></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div th:if="${logado.isAnalista(logado)}">
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Parecer Técnico</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <textarea tabindex="15" class="textarea" name="parecer_tec" ></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div th:unless="${logado.isAnalista(logado)}">
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">Parecer Técnico</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <textarea tabindex="15" class="textarea" name="parecer_tec" th:text="${denuncia.parecer_tec}" disabled></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <div th:if="${logado.isAnalista(logado)}">
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Cadastro em Siligo:</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="select">
+                                <select tabindex="1" name="status">
+                                    <option value="Aguardando atendimento">Aguardando atendimento</option>
+                                    <option value="Em atendimento">Em atendimento</option>
+                                    <option value="Finalizada">Finalizada</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div th:unless="${logado.isAnalista(logado)}">
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">Status da denuncia:</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <input tabindex="13" th:value="${denuncia.status}" class="input" type="text"
+                                           id="status" name="statusDenun" autocomplete="off" required
+                                           disabled>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -265,11 +319,13 @@
                 <div class="field is-grouped">
                     <div class="control">
                         <a th:href="@{'/home'}">
-                            <button tabindex="17" class="button is-link is-light" type="reset">Cancelar</button>
+                            <button tabindex="17" class="button is-link is-light" type="reset">Voltar</button>
                         </a>
                     </div>
-                    <div class="control">
-                        <button tabindex="16" class="button is-link" type="submit">Cadastrar</button>
+                    <div th:if="${logado.isAnalista(logado)}">
+                        <div class="control">
+                            <button tabindex="16" class="button is-link" type="submit">Cadastrar</button>
+                        </div>
                     </div>
                 </div>
             </form>

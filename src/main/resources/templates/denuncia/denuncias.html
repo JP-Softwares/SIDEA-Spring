@@ -21,19 +21,10 @@
             border-collapse: collapse;
             margin-top: 20px;
         }
-
-        th,
-        td {
+        th{
             border: 1px solid #ddd;
-            padding: 10px;
             text-align: center;
         }
-
-        th {
-            background-color: #f2f2f2;
-            text-align: center;
-        }
-
     </style>
 </head>
 
@@ -41,19 +32,35 @@
 
     <h1>Denúncias Ambientais</h1>
 
-    <form class="form" action="../denuncias" method="post">
+    <form class="form" action="../denuncia/visualizar" method="post">
 
-        <div class="form-group">
-            <label class="label" for="protocolo">Protocolo</label>
-            <input class="input" type="text" id="protocolo" name="protocolo" autocomplete="off">
-            <label class="label" for="municipio">Município</label>
-            <input class="input" type="text" id="municipio" name="municipio" autocomplete="off">
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label">Protocolo</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <div class="control">
+                        <input class="input" type="text" autocomplete="off" name="protocolo">
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="form-group">
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label class="label">Município</label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <div class="control">
+                        <input class="input" type="text" autocomplete="off" name="municipio">
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="form-group">
+        <div class="field is-horizontal">
             <label class="label" for="categoria">Categoria</label>
             <select tabindex="1" id="categoria" name="categoria">
                 <option value="0">Fauna</option>
@@ -64,17 +71,17 @@
             </select>
         </div>
 
-        <div class="form-group">
+        <div class="field is-horizontal">
             <label class="label" for="data_ocorrido">Data da ocorrência</label>
             <input class="input" type="date" id="data_ocorrido" name="data_ocorrido" autocomplete="off">
         </div>
 
-        <div class="form-group">
+        <div class="field is-horizontal">
             <label class="label" for="data_denuncia">Data da denúncia</label>
             <input class="input" type="date" id="data_denuncia" name="data_denuncia" autocomplete="off">
         </div>
 
-        <div class="form-group">
+        <div class="field is-horizontal">
             <label class="label" for="status">Status</label>
             <select tabindex="1" id="status" name="status">
                 <option value="0">Aguardando atendimento</option>
@@ -82,12 +89,7 @@
                 <option value="2">Finalizada</option>
             </select>
         </div>
-
-        <div class="form-group">
-            <!-- Adicione aqui outros campos, se necessário -->
-        </div>
-
-        <button type="submit">Enviar</button>
+        <button type="submit">Filtrar</button>
 
     </form>
 <div th:if="${logado.isAnalista(logado)}">
@@ -96,43 +98,42 @@
             Denuncias aguardando atendimento
         </button>
     </a>
-
-
 </div>
 <div class="table-container">
-<table class="table is-striped">
-    <thead>
+    <table class="table is-striped is-vcentered">
+        <thead class="is-vcentered">
         <tr>
-            <th scope="col">Município</th>
-            <th scope="col">Bairro</th>
-            <th scope="col">Logradouro</th>
-            <th scope="col">Categoria</th>
-            <th scope="col">Data do Ocorrido</th>
-            <th scope="col">Data de abertura</th>
-            <th scope="col">Status</th>
-            <th scope="col"></th>
+            <th>Protocolo</th>
+            <th>Município</th>
+            <th>Bairro</th>
+            <th>Logradouro</th>
+            <th>Categoria</th>
+            <th>Data do Ocorrido</th>
+            <th>Data de abertura</th>
+            <th>Status</th>
+            <th></th>
         </tr>
-    </thead>
-    <tbody>
-    <tr th:each="denuncia : ${ListDen}">
-        <td th:text="${denuncia.municipio}"></td>
-        <td th:text="${denuncia.bairro}"></td>
-        <td th:text="${denuncia.logradouro}"></td>
-        <td th:text="${denuncia.atividade}"></td>
-        <td th:text="${denuncia.data_ocorrido}"></td>
-        <td th:text="${denuncia.data_denuncia}"></td>
-        <td th:text="${denuncia.status}"></td>
-        <td>
-            <a th:href="@{'/denuncia/' + ${denuncia.id} + '/visualizar'}">
-                <button id="Ver" class="button btn-second" >
-                    editar
-                </button>
-            </a>
-        </td>
-
-                </tr>
-            </tbody>
-        </table>
+        </thead>
+        <tbody class="is-vcentered">
+        <tr th:each="denuncia : ${ListDen}">
+            <td th:text="${denuncia.protocolo}"></td>
+            <td th:text="${denuncia.municipio}"></td>
+            <td th:text="${denuncia.bairro}"></td>
+            <td th:text="${denuncia.logradouro}"></td>
+            <td th:text="${denuncia.atividade}"></td>
+            <td th:text="${denuncia.data_ocorrido}"></td>
+            <td th:text="${denuncia.data_denuncia}"></td>
+            <td th:text="${denuncia.status}"></td>
+            <td>
+                <a th:href="@{'/denuncia/' + ${denuncia.id} + '/visualizar'}">
+                    <button id="Ver" class="button btn-second">
+                        editar
+                    </button>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
     </div>
 </body>
 
