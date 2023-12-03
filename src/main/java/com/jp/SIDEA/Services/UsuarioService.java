@@ -1,5 +1,6 @@
 package com.jp.SIDEA.Services;
 
+import com.jp.SIDEA.Models.Denuncia;
 import com.jp.SIDEA.Models.Records.loginJson;
 import com.jp.SIDEA.Models.Records.usuarioJson;
 import com.jp.SIDEA.Models.Usuario;
@@ -7,6 +8,8 @@ import com.jp.SIDEA.Persistencia.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -49,6 +52,10 @@ public class UsuarioService {
     public Usuario findByCPF(String cpf){
         Usuario newUser = usuarios.findByLogin(cpf);
         return  newUser;
+    }
+
+    public List<Usuario> ListarTodos(){
+        return usuarios.listarTodos().orElseGet(ArrayList::new);
     }
 
 }
