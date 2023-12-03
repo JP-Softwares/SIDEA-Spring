@@ -44,3 +44,15 @@ html, body, content {
 .field.is-grouped {
     justify-content: center;
 }
+
+#select-subcategoria {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#select-subcategoria option {
+    white-space: normal;
+    min-height: 30px;
+    height: auto;
+}

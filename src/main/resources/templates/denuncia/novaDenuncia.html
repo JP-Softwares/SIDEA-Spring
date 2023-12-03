@@ -89,12 +89,11 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="select">
-                                <select tabindex="5" name="atividade">
+                                <select tabindex="5" name="atividade" id="select-categoria">
                                     <option value="Fauna">Fauna</option>
                                     <option value="Flora">Flora</option>
                                     <option value="Poluição">Poluição</option>
-                                    <option value="Ornamento Urbano e Patrimônio Cultural">Ornamento Urbano e Patrimônio
-                                        Cultural</option>
+                                    <option value="Ornamento Urbano e Patrimônio Cultural">Ornamento Urbano e Patrimônio Cultural</option>
                                     <option value="Administração Ambiente">Administração Ambiente</option>
                                 </select>
                             </div>
@@ -110,13 +109,7 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="select">
-                                <select tabindex="6" name="categoria">
-                                    <option value="Fauna">Fauna</option>
-                                    <option value="Flora">Flora</option>
-                                    <option value="Poluição">Poluição</option>
-                                    <option value="Ornamento Urbano e Patrimônio Cultural">Ornamento Urbano e Patrimônio
-                                        Cultural</option>
-                                    <option value="Administração Ambiente">Administração Ambiente</option>
+                                <select tabindex="6" name="categoria" id="select-subcategoria">
                                 </select>
                             </div>
                         </div>
@@ -290,7 +283,13 @@
             </form>
         </div>
     </div>
-
+    
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="//assets.locaweb.com.br/locastyle/2.0.6/javascripts/locastyle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <div th:replace="~{base/base-elem :: script-padrao}"></div>
     <script th:src="@{'/js/denuncia.js'}" src="../../static/js/denuncia.js"></script>
 </body>
