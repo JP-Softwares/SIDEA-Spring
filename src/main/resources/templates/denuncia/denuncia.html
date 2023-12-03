@@ -1,121 +1,279 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Denuncia</title>
-    <!-- Adicione links para seus estilos ou folhas de estilo aqui -->
-</head>
-<body>
+    <head th:replace="~{base/base-elem :: head-padrao}"></head>
+    <head>
+        <title>Cadastro de Denuncia - SIDEA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link rel="stylesheet" href="../../static/css/denuncia.css" th:href="@{'/css/denuncia.css'}">
+        <script th:src="@{'/js/denuncia.js'}" src="../../static/js/denuncia.js"></script>
+    </head>
+    <body>
 
-<h2>Cadastro de Denuncia</h2>
+        <div class="content-sidea">
 
-<form action="../denuncia" method="post" enctype="multipart/form-data">
+            <div class="content-form">
+                <h1 class="title is-1 title-form">Cadastro de Denúncia</h2>
 
-    <!-- Campo Sigilo -->
-    <label>Cadastro em Siligo: </label>
-    <select class="js-example-basic-single" name="sigilo">
-        <option value=1>Sim</option>
-        <option value=0>Não</option>
-    </select>
-    <br>
+            <form class="form" action="../denuncia" method="post" enctype="multipart/form-data">
+                <!-- Campo Sigilo -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">Cadastro em Siligo:</label>
+                    </div>
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="select">
+                            <select tabindex="1" name="sigilo">
+                                <option value=1>Sim</option>
+                                <option value=0>Não</option>
+                            </select>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
-    <!-- Campo CEP -->
-    <label for="cep">CEP:</label>
-    <input type="text" id="cep" name="cep" autocomplete="CEP" required>
+                <!-- Campo Descrição -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Descrição:</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <textarea tabindex="2" class="textarea" name="descricao" autocomplete="off" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <br>
+                <!-- Campo CEP -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">CEP:</label>
+                    </div>
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input tabindex="3" class="input" type="text" id="cep" name="cep" autocomplete="off" required>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
-    <!-- Campo Logradouro -->
-    <label for="logradouro">Logradouro:</label>
-    <input type="Logradouro" id="logradouro" autocomplete="Logradouro" name="logradouro" required>
-    <br>
+                <!-- Campo Logradouro -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">Logradouro:</label>
+                    </div>
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input tabindex="4" class="input" type="Logradouro" id="logradouro" autocomplete="off" name="logradouro" required>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
-    <!-- Campo Categoria -->
-    <label>Categoria da Denuncia: </label>
-    <select class="js-example-basic-single" name="atividade">
-        <option value="Fauna">Fauna</option>
-        <option value="Flora">Flora</option>
-        <option value="Poluição">Poluição</option>
-        <option value="Ornamento Urbano e Patrimônio Cultural">Ornamento Urbano e Patrimônio Cultural</option>
-        <option value="Administração Ambiente">Administração Ambiente</option>
-    </select>
+                <!-- Campo Categoria -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">Categoria da Denuncia:</label>
+                    </div>
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="select">
+                            <select tabindex="5" name="atividade">
+                                <option value="Fauna">Fauna</option>
+                                <option value="Flora">Flora</option>
+                                <option value="Poluição">Poluição</option>
+                                <option value="Ornamento Urbano e Patrimônio Cultural">Ornamento Urbano e Patrimônio Cultural</option>
+                                <option value="Administração Ambiente">Administração Ambiente</option>
+                            </select>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
-    <br>
+                <!-- Campo Subcategoria -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">Subcategoria da Denuncia:</label>
+                    </div>
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="select">
+                            <select tabindex="6" name="categoria">
+                                <option value="Fauna">Fauna</option>
+                                <option value="Flora">Flora</option>
+                                <option value="Poluição">Poluição</option>
+                                <option value="Ornamento Urbano e Patrimônio Cultural">Ornamento Urbano e Patrimônio Cultural</option>
+                                <option value="Administração Ambiente">Administração Ambiente</option>
+                            </select>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
-    <!-- Campo Subcategoria -->
-    <label>Subcategoria da Denuncia: </label>
-    <select class="js-example-basic-single" name="categoria">
-        <option value="Fauna">Fauna</option>
-        <option value="Flora">Flora</option>
-        <option value="Poluição">Poluição</option>
-        <option value="Ornamento Urbano e Patrimônio Cultural">Ornamento Urbano e Patrimônio Cultural</option>
-        <option value="Administração Ambiente">Administração Ambiente</option>
-    </select>
+                <!-- Campo Bairro -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">Bairro:</label>
+                    </div>
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input tabindex="7" class="input" type="text" id="bairro" name="bairro" autocomplete="off" required>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
-    <br>
+                <!-- Campo Municipio -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">Municipio:</label>
+                    </div>
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input tabindex="8" class="input" type="text" id="municipio" name="municipio" autocomplete="off" required>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
-    <!-- Campo Bairro -->
-    <label for="bairro">Bairro:</label>
-    <input type="text" id="bairro" name="bairro" autocomplete="bairro" required>
+                <!-- Campo Referencia -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">Referencia:</label>
+                    </div>
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input tabindex="9" class="input" type="text" id="referencia" name="referencia" autocomplete="off" required>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
-    <br>
+                <!-- Campo Latitude -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">Latitude:</label>
+                    </div>
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input tabindex="10" class="input" type="text" id="latitude" name="latitude" autocomplete="off" required>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
-    <!-- Campo Municipio -->
-    <label for="municipio">Municipio:</label>
-    <input type="text" id="municipio" name="municipio" autocomplete="municipio" required>
+                <!-- Campo Longitude -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">Longitude:</label>
+                    </div>
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input tabindex="11" class="input" type="text" id="longitude" name="longitude" autocomplete="off" required>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
-    <br>
+                <!-- Campo Data do Ocorrido -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">Data do Ocorrido:</label>
+                    </div>
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input tabindex="12" class="input" type="date" id="dataDoOcorrido" name="dataDoOcorrido" autocomplete="off" required>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
-    <!-- Campo Referencia -->
-    <label for="referencia">Referencia:</label>
-    <input type="text" id="referencia" name="referencia" autocomplete="Referencia" required>
+                <!-- Campo Provavel Criminoso -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">Provavel Criminoso:</label>
+                    </div>
+                    <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input tabindex="13" class="input" type="text" id="provavelCriminoso" name="provavelCriminoso" autocomplete="Provavel Criminoso" required>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
-    <br>
+                <!-- Campo Anexos -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                    <label class="label">Evidência:</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <div class="file has-name">
+                                    <label tabindex="14" class="file-label">
+                                        <input class="file-input" id="anexo" type="file" name="imagem">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label" id="anexo-name">
+                                                Escolha um arquivo
+                                            </span>
+                                        </span>
+                                    </label>
+                                    <!--
+                                    <span class="file-label file-name" id="removefile">
+                                        <i class="fas fa-xmark"></i>
+                                    </span>
+                                    -->
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Campo Latitude -->
-    <label for="latitude">Latitude:</label>
-    <input type="text" id="latitude" name="latitude" autocomplete="Latitude" required>
+                
 
-    <br>
+                <!-- Campo Outras Informações -->
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Outras Informações:</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <div class="control">
+                                <textarea tabindex="15" class="textarea" name="outrasInformacoes" autocomplete="off" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Campo Longitude -->
-    <label for="longitude">Longitude:</label>
-    <input type="text" id="longitude" name="longitude" autocomplete="Longitude" required>
-
-    <br>
-
-    <!-- Campo Data do Ocorrido -->
-    <label for="dataDoOcorrido">Data do Ocorrido:</label>
-    <input type="date" id="dataDoOcorrido" name="dataDoOcorrido" autocomplete="Data do Ocorrido" required>
-
-    <br>
-
-    <!-- Campo Descrição -->
-    <label for="descricao">Descrição:</label>
-    <input type="text" id="descricao" name="descricao" autocomplete="Descrição" required>
-
-    <br>
-
-    <!-- Campo Provavel Criminoso -->
-    <label for="provavelCriminoso">Provavel Criminoso:</label>
-    <input type="text" id="provavelCriminoso" name="provavelCriminoso" autocomplete="Provavel Criminoso" required>
-
-    <br>
-
-    <label for="formFile" class="form-label obrigatorio">Fotos</label>
-    <input class="form-control" type="file" id="formFile" name="anexos" multiple>
-
-    <!-- Campo Outras Informações -->
-    <label for="outrasInformacoes">Outras Informações:</label>
-    <input type="text" id="outrasInformacoes" name="outrasInformacoes" autocomplete="Outras Informações" required>
-
-    <br>
-
-    <!-- Botão de Envio -->
-    <button type="submit">Cadastrar</button>
-    <!-- Campo Anexo -->
-
-</form>
-</body>
+                <!-- Botão de Envio -->
+                <div class="field is-grouped">
+                    <div class="control">
+                        <a th:href="@{'/home'}">
+                            <button tabindex="17" class="button is-link is-light" type="reset">Cancelar</button>
+                        </a>
+                    </div>
+                    <div class="control">
+                      <button tabindex="16" class="button is-link" type="submit">Cadastrar</button>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </body>
 </html>
