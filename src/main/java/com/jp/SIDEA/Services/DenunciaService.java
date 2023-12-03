@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.jp.SIDEA.Models.Records.denunciajson;
 
+import java.sql.Date;
+import java.time.LocalDate;
+
 @Service
 public class DenunciaService {
 
@@ -33,6 +36,7 @@ public class DenunciaService {
         den.setProvavel_criminoso(json.provavelCriminoso());
         den.setOutras_informacoes(json.outrasInformacoes());
         den.setAutor(logado.getLogado());
+        den.setData_denuncia(Date.valueOf(LocalDate.now()));
         Denuncia envio = denuncias.save(den);
         return envio;
     }
