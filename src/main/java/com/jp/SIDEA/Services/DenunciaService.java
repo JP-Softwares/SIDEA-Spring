@@ -2,13 +2,14 @@ package com.jp.SIDEA.Services;
 
 
 import com.jp.SIDEA.Models.Denuncia;
+import com.jp.SIDEA.Models.Records.denunciajson;
 import com.jp.SIDEA.Persistencia.DenunciaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.jp.SIDEA.Models.Records.denunciajson;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Calendar;
 
 @Service
 public class DenunciaService {
@@ -38,6 +39,9 @@ public class DenunciaService {
         den.setAutor(logado.getLogado());
         den.setData_denuncia(Date.valueOf(LocalDate.now()));
         Denuncia envio = denuncias.save(den);
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        envio.setProtocolo(envio.getId()+"/"+year);
+        denuncias.save(envio);
         return envio;
     }
 

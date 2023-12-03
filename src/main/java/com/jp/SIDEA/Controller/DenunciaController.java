@@ -28,7 +28,7 @@ public class DenunciaController {
     @PostMapping
     public ModelAndView denunciaView(@ModelAttribute denunciajson json){
         denuncias.Salvar(json);
-        ModelAndView modelinho = new ModelAndView("denuncia/denuncia");
+        ModelAndView modelinho = new ModelAndView("redirect:/home");
         return modelinho;
     }
 

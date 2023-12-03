@@ -10,7 +10,7 @@
 
 <h2>Cadastro de Denuncia</h2>
 
-<form action="../denuncia" method="post">
+<form action="../denuncia" method="post" enctype="multipart/form-data">
 
     <!-- Campo Sigilo -->
     <label>Cadastro em Siligo: </label>
@@ -102,6 +102,9 @@
     <input type="text" id="provavelCriminoso" name="provavelCriminoso" autocomplete="Provavel Criminoso" required>
 
     <br>
+
+    <label for="formFile" class="form-label obrigatorio">Fotos</label>
+    <input class="form-control" type="file" id="formFile" name="anexos" multiple>
 
     <!-- Campo Outras Informações -->
     <label for="outrasInformacoes">Outras Informações:</label>
