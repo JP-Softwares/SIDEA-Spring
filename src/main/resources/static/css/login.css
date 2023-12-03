@@ -31,9 +31,25 @@ html, body {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 2%;
-    padding-right: 3%;
     position: absolute;
+}
+
+.div-voltar > label {
+    width: 5%;
+    margin-top: 2%;
+    margin-right: 3%;
+}
+
+.div-voltar > label a {
+    display: block;
+    width: 100%;
+    height: 5%;
+}
+
+.div-voltar > label a i {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .container-sidea {
