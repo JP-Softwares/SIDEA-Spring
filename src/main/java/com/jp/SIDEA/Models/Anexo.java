@@ -17,5 +17,6 @@ public class Anexo {
     private byte[] conteudo;
     @OneToOne
     private Denuncia denuncia_id;
+    private String tipo_arquivo = "";
     private String nomeSemExtensao = "";
 }

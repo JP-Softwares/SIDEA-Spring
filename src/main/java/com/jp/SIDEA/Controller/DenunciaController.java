@@ -2,6 +2,7 @@ package com.jp.SIDEA.Controller;
 
 import com.jp.SIDEA.Models.Denuncia;
 import com.jp.SIDEA.Models.Records.denunciajson;
+import com.jp.SIDEA.Services.AnexoService;
 import com.jp.SIDEA.Services.DenunciaService;
 import com.jp.SIDEA.Services.LogadoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,9 @@ public class DenunciaController {
 
     @Autowired
     private LogadoService logado;
+
+    @Autowired
+    private AnexoService anexos;
 
     
     @GetMapping
@@ -57,6 +61,7 @@ public class DenunciaController {
     public ModelAndView visualizarDenuncia(@PathVariable Long id){
         ModelAndView modelinho = new ModelAndView("denuncia/visualizarDenuncia");
         modelinho.addObject("denuncia", denuncias.obter(id));
+        modelinho.addObject("anexo", anexos.AnexoDaDenuncia(id));
         modelinho.addObject("logado", logado.getLogado());
         return modelinho;
     }
