@@ -37,7 +37,7 @@ public class Denuncia {
     private Usuario autor;
     @ManyToOne
     private Usuario executor;
-    private int status;
+    private String status;
     private String parecer_tec;
 
 

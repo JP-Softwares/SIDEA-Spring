@@ -24,36 +24,55 @@
     th, td {
         border: 1px solid #ddd;
         padding: 10px;
-        text-align: left;
+        text-align: center;
     }
 
     th {
         background-color: #f2f2f2;
+        text-align: center;
     }
 </style>
 </head>
 <body>
 
 <h1>Denúncias Ambientais</h1>
+<div class="table-container">
+<table class="table is-striped">
+    <thead>
+        <tr>
+            <th scope="col">Município</th>
+            <th scope="col">Bairro</th>
+            <th scope="col">Logradouro</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Subcategoria</th>
+            <th scope="col">Data do Ocorrido</th>
+            <th scope="col">Data de abertura</th>
+            <th scope="col">Status</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:each="denuncia : ${ListDen}">
+        <td th:text="${denuncia.municipio}"></td>
+        <td th:text="${denuncia.bairro}"></td>
+        <td th:text="${denuncia.logradouro}"></td>
+        <td th:text="${denuncia.categoria}"></td>
+        <td th:text="${denuncia.atividade}"></td>
+        <td th:text="${denuncia.data_ocorrido}"></td>
+        <td th:text="${denuncia.data_denuncia}"></td>
+        <td th:text="${denuncia.status}"></td>
+        <td>
+            <a th:href="@{'/home'}">
+                <button id="editarDenuncia" class="button btn-second" >
+                    editar
+                </button>
+            </a>
+        </td>
 
-<table>
-    <tr>
-        <th>Sigilo</th>
-        <th>CEP</th>
-        <th>Logradouro</th>
-        <th>Categoria</th>
-        <th>Subcategoria</th>
-        <th>Bairro</th>
-        <th>Município</th>
-        <th>Referência</th>
-        <th>Latitude</th>
-        <th>Longitude</th>
-        <th>Data do Ocorrido</th>
-        <th>Descrição</th>
-        <th>Provável Criminoso</th>
-        <!-- Adicione outras informações conforme necessário -->
     </tr>
+    </tbody>
 </table>
+</div>
 
 <!-- Botão para Alterar Usuário -->
 <button onclick="window.location.href='visualizarDenuncia.html'">Visualizar Denuncia</button>
