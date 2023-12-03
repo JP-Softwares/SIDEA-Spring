@@ -58,9 +58,24 @@ public class DenunciaController {
         return modelinho;
     }
 
-    @GetMapping("{id}/visualizar")
+    @GetMapping("{id}/visualizar/imagem")
     @ResponseBody
     public ResponseEntity<byte[]> exibirImagem(@PathVariable Long id){
         return anexos.obterImagem(id);
+    }
+
+    @GetMapping("{id}/visualizar")
+    public ModelAndView visualizarDenuncia(@PathVariable Long id){
+        ModelAndView modelinho = new ModelAndView("denuncia/visualizarDenuncia");
+        if(logado.getLogado().getTipo().equals("denunciante")){
+            Denuncia den = denuncias.obter(id);
+            modelinho.addObject("denuncia", den);
+            modelinho.addObject("logado", logado.getLogado());
+        }else{
+            Denuncia den = denuncias.obter(id);
+            modelinho.addObject("denuncia", den);
+            modelinho.addObject("logado", logado.getLogado());
+        }
+        return modelinho;
     }
 }
