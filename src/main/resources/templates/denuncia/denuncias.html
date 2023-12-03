@@ -79,8 +79,8 @@
         <td th:text="${denuncia.data_denuncia}"></td>
         <td th:text="${denuncia.status}"></td>
         <td>
-            <a th:href="@{'/denuncia/' + ${denuncia.id} + 'visualizar'}">
-                <button id="editarDenuncia" class="button btn-second" >
+            <a th:href="@{'/denuncia/' + ${denuncia.id} + '/visualizar'}">
+                <button id="Ver" class="button btn-second" >
                     editar
                 </button>
             </a>

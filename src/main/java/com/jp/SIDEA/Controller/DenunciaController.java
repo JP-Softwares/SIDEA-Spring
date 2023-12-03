@@ -6,6 +6,7 @@ import com.jp.SIDEA.Services.AnexoService;
 import com.jp.SIDEA.Services.DenunciaService;
 import com.jp.SIDEA.Services.LogadoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -57,12 +58,24 @@ public class DenunciaController {
         return modelinho;
     }
 
+    @GetMapping("{id}/visualizar/imagem")
+    @ResponseBody
+    public ResponseEntity<byte[]> exibirImagem(@PathVariable Long id){
+        return anexos.obterImagem(id);
+    }
+
     @GetMapping("{id}/visualizar")
     public ModelAndView visualizarDenuncia(@PathVariable Long id){
         ModelAndView modelinho = new ModelAndView("denuncia/visualizarDenuncia");
-        modelinho.addObject("denuncia", denuncias.obter(id));
-        modelinho.addObject("anexo", anexos.AnexoDaDenuncia(id));
-        modelinho.addObject("logado", logado.getLogado());
+        if(logado.getLogado().getTipo().equals("denunciante")){
+            Denuncia den = denuncias.obter(id);
+            modelinho.addObject("denuncia", den);
+            modelinho.addObject("logado", logado.getLogado());
+        }else{
+            Denuncia den = denuncias.obter(id);
+            modelinho.addObject("denuncia", den);
+            modelinho.addObject("logado", logado.getLogado());
+        }
         return modelinho;
     }
 }
