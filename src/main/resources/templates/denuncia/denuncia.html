@@ -3,15 +3,18 @@
     <head th:replace="~{base/base-elem :: head-padrao}"></head>
     <head>
         <title>Cadastro de Denuncia - SIDEA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
         <link rel="stylesheet" href="../../static/css/denuncia.css" th:href="@{'/css/denuncia.css'}">
+        <script th:src="@{'/js/denuncia.js'}" src="../../static/js/denuncia.js"></script>
     </head>
     <body>
 
         <div class="content-sidea">
 
             <div class="content-form">
-                <h1 class="title is-1 title-form">Cadastro de Denúncia</h1>
+                <h1 class="title is-1 title-form">Cadastro de Denúncia</h2>
 
             <form class="form" action="../denuncia" method="post" enctype="multipart/form-data">
                 <!-- Campo Sigilo -->
@@ -22,7 +25,7 @@
                     <div class="field-body">
                     <div class="field">
                         <div class="select">
-                            <select name="sigilo">
+                            <select tabindex="1" name="sigilo">
                                 <option value=1>Sim</option>
                                 <option value=0>Não</option>
                             </select>
@@ -39,7 +42,7 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <textarea class="textarea" name="descricao" autocomplete="off" required></textarea>
+                                <textarea tabindex="2" class="textarea" name="descricao" autocomplete="off" required></textarea>
                             </div>
                         </div>
                     </div>
@@ -53,7 +56,7 @@
                     <div class="field-body">
                     <div class="field">
                         <div class="control">
-                            <input class="input" type="text" id="cep" name="cep" autocomplete="off" required>
+                            <input tabindex="3" class="input" type="text" id="cep" name="cep" autocomplete="off" required>
                         </div>
                     </div>
                     </div>
@@ -67,7 +70,7 @@
                     <div class="field-body">
                     <div class="field">
                         <div class="control">
-                            <input class="input" type="Logradouro" id="logradouro" autocomplete="off" name="logradouro" required>
+                            <input tabindex="4" class="input" type="Logradouro" id="logradouro" autocomplete="off" name="logradouro" required>
                         </div>
                     </div>
                     </div>
@@ -81,7 +84,7 @@
                     <div class="field-body">
                     <div class="field">
                         <div class="select">
-                            <select name="atividade">
+                            <select tabindex="5" name="atividade">
                                 <option value="Fauna">Fauna</option>
                                 <option value="Flora">Flora</option>
                                 <option value="Poluição">Poluição</option>
@@ -101,7 +104,7 @@
                     <div class="field-body">
                     <div class="field">
                         <div class="select">
-                            <select name="categoria">
+                            <select tabindex="6" name="categoria">
                                 <option value="Fauna">Fauna</option>
                                 <option value="Flora">Flora</option>
                                 <option value="Poluição">Poluição</option>
@@ -121,7 +124,7 @@
                     <div class="field-body">
                     <div class="field">
                         <div class="control">
-                            <input class="input" type="text" id="bairro" name="bairro" autocomplete="off" required>
+                            <input tabindex="7" class="input" type="text" id="bairro" name="bairro" autocomplete="off" required>
                         </div>
                     </div>
                     </div>
@@ -135,7 +138,7 @@
                     <div class="field-body">
                     <div class="field">
                         <div class="control">
-                            <input class="input" type="text" id="municipio" name="municipio" autocomplete="off" required>
+                            <input tabindex="8" class="input" type="text" id="municipio" name="municipio" autocomplete="off" required>
                         </div>
                     </div>
                     </div>
@@ -149,7 +152,7 @@
                     <div class="field-body">
                     <div class="field">
                         <div class="control">
-                            <input class="input" type="text" id="referencia" name="referencia" autocomplete="off" required>
+                            <input tabindex="9" class="input" type="text" id="referencia" name="referencia" autocomplete="off" required>
                         </div>
                     </div>
                     </div>
@@ -163,7 +166,7 @@
                     <div class="field-body">
                     <div class="field">
                         <div class="control">
-                            <input class="input" type="text" id="latitude" name="latitude" autocomplete="off" required>
+                            <input tabindex="10" class="input" type="text" id="latitude" name="latitude" autocomplete="off" required>
                         </div>
                     </div>
                     </div>
@@ -177,7 +180,7 @@
                     <div class="field-body">
                     <div class="field">
                         <div class="control">
-                            <input class="input" type="text" id="longitude" name="longitude" autocomplete="off" required>
+                            <input tabindex="11" class="input" type="text" id="longitude" name="longitude" autocomplete="off" required>
                         </div>
                     </div>
                     </div>
@@ -191,7 +194,7 @@
                     <div class="field-body">
                     <div class="field">
                         <div class="control">
-                            <input class="input" type="date" id="dataDoOcorrido" name="dataDoOcorrido" autocomplete="off" required>
+                            <input tabindex="12" class="input" type="date" id="dataDoOcorrido" name="dataDoOcorrido" autocomplete="off" required>
                         </div>
                     </div>
                     </div>
@@ -205,7 +208,7 @@
                     <div class="field-body">
                     <div class="field">
                         <div class="control">
-                            <input class="input" type="text" id="provavelCriminoso" name="provavelCriminoso" autocomplete="Provavel Criminoso" required>
+                            <input tabindex="13" class="input" type="text" id="provavelCriminoso" name="provavelCriminoso" autocomplete="Provavel Criminoso" required>
                         </div>
                     </div>
                     </div>
@@ -217,22 +220,28 @@
                     <label class="label">Evidência:</label>
                     </div>
                     <div class="field-body">
-                        <div class="file has-name">
-                            <label class="file-label">
-                              <input class="file-input" type="file" name="imagem">
-                              <span class="file-cta">
-                                <span class="file-icon">
-                                  <i class="fas fa-upload"></i>
-                                </span>
-                                <span class="file-label">
-                                  Choose a file…
-                                </span>
-                              </span>
-                              <span class="file-name">
-                                Screen Shot 2017-07-29 at 15.54.25.png
-                              </span>
-                            </label>
-                          </div>
+                        <div class="field">
+                            <div class="control">
+                                <div class="file has-name">
+                                    <label tabindex="14" class="file-label">
+                                        <input class="file-input" id="anexo" type="file" name="imagem">
+                                        <span class="file-cta">
+                                            <span class="file-icon">
+                                                <i class="fas fa-upload"></i>
+                                            </span>
+                                            <span class="file-label" id="anexo-name">
+                                                Escolha um arquivo
+                                            </span>
+                                        </span>
+                                    </label>
+                                    <!--
+                                    <span class="file-label file-name" id="removefile">
+                                        <i class="fas fa-xmark"></i>
+                                    </span>
+                                    -->
+                                  </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -246,7 +255,7 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <textarea class="textarea" name="outrasInformacoes" autocomplete="off" required></textarea>
+                                <textarea tabindex="15" class="textarea" name="outrasInformacoes" autocomplete="off" required></textarea>
                             </div>
                         </div>
                     </div>
@@ -256,19 +265,15 @@
                 <div class="field is-grouped">
                     <div class="control">
                         <a th:href="@{'/home'}">
-                            <button class="button is-link is-light" type="reset">Cancelar</button>
+                            <button tabindex="17" class="button is-link is-light" type="reset">Cancelar</button>
                         </a>
                     </div>
                     <div class="control">
-                      <button class="button is-link" type="submit">Cadastrar</button>
+                      <button tabindex="16" class="button is-link" type="submit">Cadastrar</button>
                     </div>
                 </div>
             </form>
             </div>
         </div>
-
-        
-        <script th:src="@{'/js/denuncia.js'}" src="../../static/js/denuncia.js"></script>
-        <div th:replace="~{base/base-elem :: script-padrao}"></div>
     </body>
 </html>
