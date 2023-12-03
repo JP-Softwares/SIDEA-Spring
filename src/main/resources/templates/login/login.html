@@ -7,41 +7,51 @@
     <link rel="stylesheet" href="../../static/css/login.css" th:href="@{'/css/login.css'}">
 </head>
     <body>
-        <div class="container">
-            <div class="content first-content">
-                <div class="first-column">
-                    <h2 class="title title-primary">Bem-vindo de volta!</h2>
-                    <p class="description description-primary">Para manter-se conectado conosco,</p>
-                    <p class="description description-primary">Faça o login com suas informações pessoais.</p>
-                </div>
-                <div class="second-column">
-                    <h2 class="title title-second">Login</h2>
-                    <form class="form" action="/Login" method="post">
-                        <div class="div_entrada">
-                            <label class="label-input" for="">
-                                <i class="fas fa-address-card icon-modify"></i>
-                                <input type="text" class="input_entrada cpf-mask" autocomplete="off" name="cpf" placeholder="CPF">
-                            </label>
+
+        <div class="container-sidea">
+            
+            <div id="divTitle">
+                <h1 id="Title">SISTEMA DE DENÚNCIA AMBIENTAL</h1>
+            </div>
+
+            <div class="container-login">
+                <div class="content first-content">
+                    <div class="first-column">
+                        <h2 class="title-login title-primary">Bem-vindo de volta!</h2>
+                        <p class="description description-primary">Para manter-se conectado conosco,</p>
+                        <p class="description description-primary">Faça o login com suas informações pessoais.</p>
+                    </div>
+                    <div class="second-column">
+                        <h2 class="title-login title-second">Login</h2>
+                        <form class="form" action="/Login" method="post">
+                            <div class="div_entrada">
+                                <label class="label-input" for="">
+                                    <i class="fas fa-address-card icon-modify"></i>
+                                    <input type="text" class="input_entrada cpf-mask" autocomplete="off" name="cpf" placeholder="CPF">
+                                </label>
+                            </div>
+                            <div class="div_entrada">
+                                <label class="label-input" for="">
+                                    <i class="fas fa-key icon-modify"></i>
+                                    <input type="password" class="input_entrada" autocomplete="current-password" name="senha" placeholder="Senha">
+                                </label> 
+                            </div>
+                            <div class="div-btn-login">
+                                <a th:href="@{'/denuncia/denuncia'}">
+                                    <button type="submit" id="teste" class="button btn-primary">
+                                        Entrar
+                                    </button>
+                                </a>
+                            </div>
+                            
+                        </form>
+                        <div class="div-btn-login">
+                            <a th:href="@{'/Login/criarConta'}">
+                                <button id="createAccount" class="button btn-second" >
+                                    criar uma conta
+                                </button>
+                            </a>
                         </div>
-                        <div class="div_entrada">
-                            <label class="label-input" for="">
-                                <i class="fas fa-key icon-modify"></i>
-                                <input type="password" class="input_entrada" autocomplete="current-password" name="senha" placeholder="Senha">
-                            </label> 
-                        </div>
-                        <a th:href="@{'/denuncia/denuncia'}">
-                            <button type="submit" id="teste" class="button btn-primary">
-                                Entrar
-                            </button>
-                        </a>
-                        
-                    </form>
-                    <div class="div-form-centralizado">
-                        <a th:href="@{'/Login/criarConta'}">
-                            <button id="createAccount" class="button btn-second" >
-                                criar uma conta
-                            </button>
-                        </a>
                     </div>
                 </div>
             </div>
