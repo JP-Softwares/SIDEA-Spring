@@ -36,6 +36,15 @@
 <body>
 
 <h1>Denúncias Ambientais</h1>
+
+<div th:if="${logado.isAnalista(logado)}">
+    <a th:href="@{'/denuncia/visualizar/abertas'}">
+        <button id="denunciasEmAberto" class="button btn-second" >
+            Denuncias aguardando atendimento
+        </button>
+    </a>
+</div>
+<div th:unless="${logado.isAnalista(logado)}"></div>
 <div class="table-container">
 <table class="table is-striped">
     <thead>
@@ -73,9 +82,5 @@
     </tbody>
 </table>
 </div>
-
-<!-- Botão para Alterar Usuário -->
-<button onclick="window.location.href='visualizarDenuncia.html'">Visualizar Denuncia</button>
-
 </body>
 </html>
