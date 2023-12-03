@@ -37,6 +37,10 @@
 
 <h1>Denúncias Ambientais</h1>
 
+<form  class="form" action="../denuncias" method="post">
+    <label class="label">CEP:</label>
+    <input class="input" type="text" id="protocol" name="protocolo" autocomplete="off" >
+</form>
 <div th:if="${logado.isAnalista(logado)}">
     <a th:href="@{'/denuncia/visualizar/abertas'}">
         <button id="denunciasEmAberto" class="button btn-second" >
@@ -44,10 +48,8 @@
         </button>
     </a>
 
-    <label class="label">CEP:</label>
-    <input tabindex="3" class="input" type="text" id="protocol" name="protocolo" autocomplete="off" >
+
 </div>
-<div th:unless="${logado.isAnalista(logado)}"></div>
 <div class="table-container">
 <table class="table is-striped">
     <thead>

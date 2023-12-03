@@ -27,7 +27,7 @@ public class DenunciaController {
     
     @GetMapping
     public ModelAndView denunciaView(){
-        ModelAndView modelinho = new ModelAndView("novaDenuncia");
+        ModelAndView modelinho = new ModelAndView("denuncia/novaDenuncia");
         return modelinho;
     }
 
@@ -40,7 +40,7 @@ public class DenunciaController {
 
     @GetMapping("/visualizar")
     public ModelAndView visualizarDenuncia(){
-        ModelAndView modelinho = new ModelAndView("denuncias");
+        ModelAndView modelinho = new ModelAndView("denuncia/denuncias");
         if(logado.getLogado().getTipo().equals("denunciante")){
             List<Denuncia> listDen = denuncias.ListarPorUser(logado.getLogado());
             modelinho.addObject("ListDen", listDen);
@@ -55,7 +55,7 @@ public class DenunciaController {
 
     @GetMapping("/visualizar/abertas")
     public ModelAndView visualizarDenunciasAbertas(){
-        ModelAndView modelinho = new ModelAndView("denuncias");
+        ModelAndView modelinho = new ModelAndView("denuncia/denuncias");
         List<Denuncia> listDen = denuncias.ListarAbertas();
         modelinho.addObject("ListDen", listDen);
         modelinho.addObject("logado", logado.getLogado());
