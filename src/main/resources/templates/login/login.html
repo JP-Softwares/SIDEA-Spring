@@ -3,7 +3,6 @@
 <head th:replace="~{base/base-elem :: head-padrao}"></head>
 <head>
     <title>Tela de Login - SIDEA</title>
-    <link rel="stylesheet" type="text/css" href="//assets.locaweb.com.br/locastyle/edge/stylesheets/locastyle.css">
     <link rel="stylesheet" href="../../static/css/login.css" th:href="@{'/css/login.css'}">
 </head>
     <body>
@@ -56,7 +55,6 @@
                 </div>
             </div>
         </div>
-
-        <script type="text/javascript" src="//assets.locaweb.com.br/locastyle/edge/javascripts/locastyle.js"></script>
+        <div th:replace="~{base/base-elem :: script-padrao}"></div>
     </body>
 </html>
