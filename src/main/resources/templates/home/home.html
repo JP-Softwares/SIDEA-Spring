@@ -29,15 +29,20 @@
                 Cadastrar Denúncia
             </button>
         </a>
-        <!-- Botão para Alterar Usuário -->
-        <button onclick="window.location.href='alterar_usuario.html'">Alterar Usuário</button>
 
+        <div th:if="${logado.isAdmin(logado)}">
+            <a th:href="@{'/usuarios'}">
+                <button id="Alterar Usuários" class="button btn-second" >
+                    Usuários
+                </button>
+            </a>
+        </div>
 
         <a th:href="@{'/denuncia/visualizar'}">
             <button id="visualizarDenuncia" class="button btn-second" >
                 Visualizar Denúncias
             </button>
         </a>
-
+        <div th:replace="~{base/base-elem :: script-padrao}"></div>
     </body>
 </html>

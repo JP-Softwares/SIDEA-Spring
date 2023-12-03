@@ -34,4 +34,9 @@ public class Usuario {
         if(logado.getTipo().equals("denunciante")) return false;
         else return true;
     }
+
+    public boolean isAdmin(Usuario logado){
+        if(logado.getTipo().equals("admin")) return true;
+        else return false;
+    }
 }
