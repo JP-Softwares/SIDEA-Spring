@@ -29,4 +29,9 @@ public class Usuario {
         this.email = email;
         this.telefone = telefone;
     }
+
+    public boolean isAnalista(Usuario logado){
+        if(logado.getTipo().equals("denunciante")) return false;
+        else return true;
+    }
 }

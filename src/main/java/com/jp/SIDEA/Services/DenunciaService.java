@@ -61,4 +61,12 @@ public class DenunciaService {
         return denuncias.listarTodosDoUsuario(usuario.findByCPF(logado.getLogado().getLogin())).orElseGet(ArrayList::new);
     }
 
+    public List<Denuncia> ListarTodos(){
+        return denuncias.listarTodos().orElseGet(ArrayList::new);
+    }
+
+    public List<Denuncia> ListarAbertas(){
+        return denuncias.listarAbertas().orElseGet(ArrayList::new);
+    }
+
 }

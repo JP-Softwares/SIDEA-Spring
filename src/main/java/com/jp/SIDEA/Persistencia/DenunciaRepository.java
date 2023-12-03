@@ -24,4 +24,10 @@ public interface DenunciaRepository extends JpaRepository<Denuncia, Long> {
     @Query("FROM Denuncia WHERE autor = :autor or executor = :autor")
     Optional<List<Denuncia>> listarTodosDoUsuario(Usuario autor);
 
+    @Query("FROM Denuncia")
+    Optional<List<Denuncia>> listarTodos();
+
+    @Query("FROM Denuncia WHERE status = 'aguardando atendimento' ")
+    Optional<List<Denuncia>> listarAbertas();
+
 }
