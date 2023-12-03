@@ -23,22 +23,22 @@
                     </div>
                     <div class="second-column">
                         <h2 class="title-login title-second">Login</h2>
-                        <form class="form" action="/Login" method="post">
+                        <form class="form" onk action="/Login" method="post">
                             <div class="div_entrada">
                                 <label class="label-input" for="">
                                     <i class="fas fa-address-card icon-modify"></i>
-                                    <input type="text" class="input_entrada cpf-mask" autocomplete="off" name="cpf" placeholder="CPF">
+                                    <input type="text" tabindex="1" class="input_entrada cpf-mask" autocomplete="off" name="cpf" placeholder="CPF">
                                 </label>
                             </div>
                             <div class="div_entrada">
                                 <label class="label-input" for="">
                                     <i class="fas fa-key icon-modify"></i>
-                                    <input type="password" class="input_entrada" autocomplete="current-password" name="senha" placeholder="Senha">
+                                    <input type="password" tabindex="2" class="input_entrada" autocomplete="current-password" name="senha" placeholder="Senha">
                                 </label> 
                             </div>
                             <div class="div-btn-login">
                                 <a th:href="@{'/denuncia/denuncia'}">
-                                    <button type="submit" id="teste" class="button btn-primary">
+                                    <button type="submit" tabindex="3" id="teste" class="button btn-primary">
                                         Entrar
                                     </button>
                                 </a>
@@ -47,7 +47,7 @@
                         </form>
                         <div class="div-btn-login">
                             <a th:href="@{'/Login/criarConta'}">
-                                <button id="createAccount" class="button btn-second" >
+                                <button id="createAccount" tabindex="4" class="button btn-second" >
                                     criar uma conta
                                 </button>
                             </a>
