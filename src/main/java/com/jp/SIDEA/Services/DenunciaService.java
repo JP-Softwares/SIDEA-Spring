@@ -69,4 +69,8 @@ public class DenunciaService {
         return denuncias.listarAbertas().orElseGet(ArrayList::new);
     }
 
+    public Denuncia obter(Long id){
+        return denuncias.findById(id).orElseGet(Denuncia::new);
+    }
+
 }
