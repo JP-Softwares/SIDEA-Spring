@@ -48,7 +48,7 @@ public class DenunciaService {
         den.setOutras_informacoes(json.outrasInformacoes());
         den.setAutor(logado.getLogado());
         den.setData_denuncia(Date.valueOf(LocalDate.now()));
-        den.setStatus("aguardando atendimento");
+        den.setStatus("Aguardando atendimento");
         Denuncia envio = denuncias.save(den);
         int year = Calendar.getInstance().get(Calendar.YEAR);
         envio.setProtocolo(envio.getId()+"/"+year);

@@ -33,6 +33,7 @@
             background-color: #f2f2f2;
             text-align: center;
         }
+
     </style>
 </head>
 
@@ -40,10 +41,55 @@
 
     <h1>Denúncias Ambientais</h1>
 
-<form  class="form" action="../denuncias" method="post">
-    <label class="label">CEP:</label>
-    <input class="input" type="text" id="protocol" name="protocolo" autocomplete="off" >
-</form>
+    <form class="form" action="../denuncias" method="post">
+
+        <div class="form-group">
+            <label class="label" for="protocolo">Protocolo</label>
+            <input class="input" type="text" id="protocolo" name="protocolo" autocomplete="off">
+            <label class="label" for="municipio">Município</label>
+            <input class="input" type="text" id="municipio" name="municipio" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+        </div>
+
+        <div class="form-group">
+            <label class="label" for="categoria">Categoria</label>
+            <select tabindex="1" id="categoria" name="categoria">
+                <option value="0">Fauna</option>
+                <option value="1">Flora</option>
+                <option value="2">Poluição</option>
+                <option value="3">Ornamento urbano e patrimônio cultural</option>
+                <option value="4">Administração ambiente</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="label" for="data_ocorrido">Data da ocorrência</label>
+            <input class="input" type="date" id="data_ocorrido" name="data_ocorrido" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+            <label class="label" for="data_denuncia">Data da denúncia</label>
+            <input class="input" type="date" id="data_denuncia" name="data_denuncia" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+            <label class="label" for="status">Status</label>
+            <select tabindex="1" id="status" name="status">
+                <option value="0">Aguardando atendimento</option>
+                <option value="1">Em atendimento</option>
+                <option value="2">Finalizada</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <!-- Adicione aqui outros campos, se necessário -->
+        </div>
+
+        <button type="submit">Enviar</button>
+
+    </form>
 <div th:if="${logado.isAnalista(logado)}">
     <a th:href="@{'/denuncia/visualizar/abertas'}">
         <button id="denunciasEmAberto" class="button btn-second" >
@@ -61,7 +107,6 @@
             <th scope="col">Bairro</th>
             <th scope="col">Logradouro</th>
             <th scope="col">Categoria</th>
-            <th scope="col">Subcategoria</th>
             <th scope="col">Data do Ocorrido</th>
             <th scope="col">Data de abertura</th>
             <th scope="col">Status</th>
@@ -73,7 +118,6 @@
         <td th:text="${denuncia.municipio}"></td>
         <td th:text="${denuncia.bairro}"></td>
         <td th:text="${denuncia.logradouro}"></td>
-        <td th:text="${denuncia.categoria}"></td>
         <td th:text="${denuncia.atividade}"></td>
         <td th:text="${denuncia.data_ocorrido}"></td>
         <td th:text="${denuncia.data_denuncia}"></td>
