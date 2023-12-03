@@ -10,11 +10,14 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Optional;
 
 @Service
 public class AnexoService {
     @Autowired
     private AnexoRepository anexos;
+
+    @Autowired DenunciaService denuncias;
 
 
     public Anexo Salvar(MultipartFile imagem, Denuncia den) throws IOException {
@@ -24,7 +27,15 @@ public class AnexoService {
         anex.setNome_arquivo(imagem.getOriginalFilename());
         Path path = Paths.get(anex.getNome_arquivo());
         anex.setNomeSemExtensao(path.getFileName().toString().replaceFirst("[.][^.]+$", ""));
+        anex.setTipo_arquivo( imagem.getContentType());
         anexos.save(anex);
         return anex;
     }
+
+    public Optional<Anexo> AnexoDaDenuncia(Long id){
+        Denuncia den = denuncias.obter(id);
+        return anexos.anexosDaDenuncia(den);
+    }
+
+
 }
