@@ -6,7 +6,9 @@ import com.jp.SIDEA.Models.Records.denunciajson;
 import com.jp.SIDEA.Persistencia.DenunciaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Calendar;
@@ -20,7 +22,10 @@ public class DenunciaService {
     @Autowired
     private LogadoService logado;
 
-    public Denuncia Salvar(denunciajson json){
+    @Autowired
+    private AnexoService imagens;
+
+    public Denuncia Salvar(denunciajson json, MultipartFile imagem) throws IOException {
         Denuncia den = new Denuncia();
         den.setSigilo(json.sigilo());
         den.setCEP(json.cep());
@@ -41,6 +46,7 @@ public class DenunciaService {
         Denuncia envio = denuncias.save(den);
         int year = Calendar.getInstance().get(Calendar.YEAR);
         envio.setProtocolo(envio.getId()+"/"+year);
+        imagens.Salvar(imagem, den);
         denuncias.save(envio);
         return envio;
     }

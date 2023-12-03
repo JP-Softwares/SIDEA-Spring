@@ -33,8 +33,11 @@
         <button onclick="window.location.href='alterar_usuario.html'">Alterar Usuário</button>
 
 
-        <!-- Botão para Visualizar Denúncias Cadastradas -->
-        <button onclick="window.location.href='denuncias_cadastradas.html'">Visualizar Denúncias Cadastradas</button>
+        <a th:href="@{'/denuncia/visualizar'}">
+            <button id="visualizarDenuncia" class="button btn-second" >
+                Visualizar Denúncias
+            </button>
+        </a>
 
         <div th:replace="~{base/base-elem :: script-padrao}"></div>
 
