@@ -31,4 +31,10 @@ public class DenunciaController {
         ModelAndView modelinho = new ModelAndView("denuncia/denuncia");
         return modelinho;
     }
+
+    @GetMapping("/visualizar")
+    public ModelAndView visualizarDenuncia(){
+        ModelAndView modelinho = new ModelAndView("denuncia/visualizarDenuncia");
+        return modelinho;
+    }
 }

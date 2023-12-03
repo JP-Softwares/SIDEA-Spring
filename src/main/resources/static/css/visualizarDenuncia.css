@@ -1,0 +1,13 @@
+#topbar {
+    height: 70px;
+    background-color: rgb(247, 246, 255);
+}
+
+#titulo {
+    height: 300px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 0;
+}
