@@ -1,125 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+    <head th:replace="~{base/base-elem :: head-padrao}"></head>
 
-<head th:replace="~{base/base-elem :: head-padrao}"></head>
+    <head>
+        <title>Editar Usuário - SIDEA</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+        <link rel="stylesheet" href="../../static/css/denuncia.css" th:href="@{'/css/denuncia.css'}">
+    </head>
 
-<head>
-    <title>Editar Usuário - SIDEA</title>
-    <link rel="stylesheet" href="../../static/css/login.css" th:href="@{'/css/login.css'}">
-</head>
+    <body>
 
-<body>
-    <div class="container-sidea">
+        <div class="content-sidea">
 
-        <div id="divTitle">
-            <h1 id="Title">SISTEMA DE DENÚNCIA AMBIENTAL</h1>
-        </div>
+            <div class="content-form">
+                <h1 class="title is-1 title-form">Editar Usuário</h1>
 
-        <div class="container-login">
-            <div class="content first-content">
-                <div class="first-column">
-                    <h2 class="title-login title-primary">Bem-vindo de volta!</h2>
-                    <p class="description description-primary">Para manter-se conectado conosco,</p>
-                    <p class="description description-primary">Faça o login com suas informações pessoais.</p>
-                </div>
-                <div class="div-voltar">
-                    <label for="">
-                        <a id="link-voltar" th:href="@{'/Login'}">
-                            <i class="fas fa-angle-left icon-modify"></i>
-                        </a>
-                    </label>
-                </div>
-                <div class="second-column">
+                <form class="form" action="../denuncia" method="post" enctype="multipart/form-data">
 
-
-                    <h2 class="title-login title-second">Cadastro</h2>
-
-                    <form class="form formCadastro" action="../Login/criarConta" method="post">
-
-                        <!-- Campo Nome -->
-                        <div class="campo">
-                            <div class="div_atributo">
-                                <label for="nome">Nome:</label>
-                            </div>
-                            <div class="div_entrada div_cadastro">
-                                <label class="label-input" for="">
-                                    <i class="fas fa-user icon-modify"></i>
-                                    <input class="input_entrada" type="text" tabindex="1" id="nome" autocomplete="name"
-                                        name="nome" required>
-                                </label>
+                    <!-- Campo Tipo de Usuário -->
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">Tipo de Usuário:</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="select">
+                                    <select tabindex="1" name="tipo" id="select-tipo" th:value="${usuario.tipo}">
+                                        <option value="Denunciante">Denunciante</option>
+                                        <option value="Analista">Analista</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Campo E-mail -->
-                        <div class="campo">
-                            <div class="div_atributo">
-                                <label for="email">E-mail:</label>
-                            </div>
-                            <div class="div_entrada div_cadastro">
-                                <label class="label-input" for="">
-                                    <i class="fas fa-envelope icon-modify"></i>
-                                    <input class="input_entrada" type="email" tabindex="2" id="email"
-                                        autocomplete="email" name="email" required>
-                                </label>
+
+                    <!-- Campo Nome -->
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">Nome:</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <input tabindex="2" class="input" type="text" name="nome" autocomplete="off" th:text="${usuario.nome}"
+                                        required>
+                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="campo">
-                            <div class="div_atributo">
-                                <label for="telefone">Telefone:</label>
-                            </div>
-                            <div class="div_entrada div_cadastro">
-                                <label class="label-input" for="">
-                                    <i class="fas fa-phone icon-modify"></i>
-                                    <input class="input_entrada cel-sp-mask" type="text" tabindex="3" id="telefone"
-                                        name="telefone" placeholder="(__) _____-____">
-                                </label>
+                    <!-- Campo E-mail -->
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">E-mail:</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <input tabindex="3" class="input" type="email" name="email" autocomplete="off" th:text="${usuario.email}"
+                                        required>
+                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Campo de Telefone com Máscara -->
-
-
-
-                        <!-- Campo Login -->
-                        <div class="campo">
-                            <div class="div_atributo">
-                                <label>CPF:</label>
-                            </div>
-                            <div class="div_entrada div_cadastro">
-                                <label class="label-input" for="">
-                                    <i class="fas fa-address-card icon-modify"></i>
-                                    <input class="input_entrada cpf-mask" tabindex="4" data-mask="000.000.000-00"
-                                        type="text" id="cpf" name="login" autocomplete="off" required>
-                                </label>
+                    <!-- Campo Telefone -->
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">Telefone:</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input cel-sp-mask" tabindex="4" class="input" type="text" name="telefone" autocomplete="off" th:text="${usuario.telefone}"
+                                    placeholder="(__) _____-____" required>
+                                </div>
                             </div>
                         </div>
-                        <!-- Campo Senha -->
-                        <div class="campo">
-                            <div class="div_atributo">
-                                <label for="senha">Senha:</label>
-                            </div>
-                            <div class="div_entrada div_cadastro">
-                                <label class="label-input" for="">
-                                    <i class="fas fa-key icon-modify"></i>
-                                    <input class="input_entrada" type="password" tabindex="5" id="senha"
-                                        autocomplete="new-password" name="senha" required>
-                                </label>
-                            </div>
-                        </div>
+                    </div>
 
-                        <!-- Botão de Envio -->
-                        <div class="div-btn-cadastro">
-                            <button type="submit" tabindex="6"
-                                class="button btn-primary btn-cadastro">Cadastrar</button>
+                    <!-- Campo CPF -->
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">CPF:</label>
                         </div>
-                    </form>
-                </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input cpf-mask" tabindex="5" class="input" type="text" name="login" autocomplete="off" th:text="${usuario.login}"
+                                        required disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botão de Envio -->
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <a th:href="@{'/usuario/controleUsuarios'}">
+                                <button tabindex="7" type="button" class="button is-link is-light">Voltar</button>
+                            </a>
+                        </div>
+                        <div class="control">
+                            <button tabindex="6" class="button is-link" type="submit">Salvar</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-    </div>
 
-    <div th:replace="~{base/base-elem :: script-padrao}"></div>
-</body>
-
+        <div th:replace="~{base/base-elem :: script-padrao}"></div>
+        <script th:src="@{'/js/editarUsuario.js'}" src="../../static/js/editarUsuario.js"></script>
+        <!--
+        <script  th:inline="javascript">
+            $(document).ready(function () {
+                $('#select-tipo select').val([[${usuario.tipo}]]).change();
+            });
+        </script>
+        -->
+    </body>
 </html>

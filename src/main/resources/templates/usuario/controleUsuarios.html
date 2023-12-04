@@ -34,7 +34,7 @@
                                     <td th:text="${usuario.getTelefone()}"></td>
                                     <td th:text="${usuario.getTipo()}"></td>
                                     <td>
-                                        <a th:href="@{'/home'}">
+                                        <a th:href="@{'/usuario/' + ${usuario.id} + '/visualizar'}">
                                             <button id="editarUsuario" class="button btn-second" >
                                                 editar
                                             </button>
