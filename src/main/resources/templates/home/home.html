@@ -3,7 +3,7 @@
     <head th:replace="~{base/base-elem :: head-padrao}"></head>
     <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <link rel="stylesheet" href="../../static/Home/css/home.css" th:href="@{'/css/home.css'}">
+        <link rel="stylesheet" href="../../static/css/home.css" th:href="@{'/css/home.css'}">
         <title>Home</title>
         <style>
             body {
@@ -21,28 +21,31 @@
     </head>
     <body>
 
-        <h1>Bem-vindo à Plataforma de Denúncias Ambientais</h1>
+        <h1 class="title is-1 title-form">Bem-vindo à Plataforma de Denúncias Ambientais</h1>
 
-
-        <a th:href="@{'/denuncia'}">
-            <button id="denuncia" class="button btn-second" >
-                Cadastrar Denúncia
-            </button>
-        </a>
-
-        <div th:if="${logado.isAdmin(logado)}">
-            <a th:href="@{'/usuarios'}">
-                <button id="Alterar Usuários" class="button btn-second" >
-                    Usuários
-                </button>
-            </a>
+        <div class="content"> 
+            <div class="box">
+                <a th:href="@{'/denuncia'}">
+                    <button id="denuncia" class="button btn-second" >
+                        Cadastrar Denúncia
+                    </button>
+                </a>
+        
+                <div th:if="${logado.isAdmin(logado)}">
+                    <a th:href="@{'/usuarios'}">
+                        <button id="Alterar Usuários" class="button btn-second" >
+                            Usuários
+                        </button>
+                    </a>
+                </div>
+        
+                <a th:href="@{'/denuncia/visualizar'}">
+                    <button id="visualizarDenuncia" class="button btn-second" >
+                        Visualizar Denúncias
+                    </button>
+                </a>
+            </div>
         </div>
-
-        <a th:href="@{'/denuncia/visualizar'}">
-            <button id="visualizarDenuncia" class="button btn-second" >
-                Visualizar Denúncias
-            </button>
-        </a>
         <div th:replace="~{base/base-elem :: script-padrao}"></div>
     </body>
 </html>

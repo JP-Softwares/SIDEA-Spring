@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap');
+
+html {
+    overflow-y: hidden;
+}
+
+html, body, .content-sidea {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.content-sidea {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    padding: 2%;
+}
+
+.content-principal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 1%;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    box-shadow: 2px 2px 15px 5px #00000034;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+
+.form {
+    width: 70%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.field-label {
+    text-align: left;
+}
+
+.field-label > .label {
+    font-size: calc(8px + 0.390625vw);
+}
+
+.select, .select > select{
+    width: 100%;
+}
+
+.content-outside-form {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-form {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.field.is-grouped {
+    justify-content: center;
+}
+
+#select-subcategoria {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#select-subcategoria option {
+    white-space: normal;
+    min-height: 30px;
+    height: auto;
+}
+
+.table-container {
+    width: 100%;
+    border-right: 1px;
+    border-right-color: #000;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    border: 1px solid #ddd;
+    text-align: center;
+}
