@@ -31,6 +31,10 @@ html, body, .content-sidea {
     border-radius: 15px;
 }
 
+.form {
+    width: 100%;
+}
+
 .title-form {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
