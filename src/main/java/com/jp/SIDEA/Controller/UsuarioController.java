@@ -22,7 +22,7 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarios;
 
-    @GetMapping("/controle")
+    @GetMapping("/controleUsuarios")
     public ModelAndView visualizarUsuarios() {
         ModelAndView modelinho = new ModelAndView("usuario/controleUsuarios");
         List<Usuario> listUser = usuarios.ListarTodos();
