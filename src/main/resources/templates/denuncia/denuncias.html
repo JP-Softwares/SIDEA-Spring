@@ -3,7 +3,7 @@
     <head th:replace="~{base/base-elem :: head-padrao}"></head>
 
     <head>
-        <title>Visualizar Denúncias Ambientais</title>
+        <title>Visualizar Denúncias Ambientais - SIDEA</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
         <link rel="stylesheet" href="../../static/css/denuncias.css" th:href="@{'/css/denuncias.css'}">
     </head>
@@ -12,14 +12,6 @@
 
         <div class="content-sidea">
                 <h1 class="title is-1 title-form">Denúncias Ambientais</h1>
-
-                <div th:if="${logado.isAnalista(logado)}">
-                    <a th:href="@{'/denuncia/visualizar/abertas'}">
-                        <button id="denunciasEmAberto" class="button btn-second">
-                            Denuncias aguardando atendimento
-                        </button>
-                    </a>
-                </div>
 
                 <div class="content-principal">
                     <div class="table-container">

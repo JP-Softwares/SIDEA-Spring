@@ -7,7 +7,6 @@
     <title>Acompanhamento de Denúncia - SIDEA</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="../../static/css/denuncia.css" th:href="@{'/css/denuncia.css'}">
-    <script th:src="@{'/js/visualizarDenuncia.js'}" src="../../static/js/visualizarDenuncia.js"></script>
 </head>
 
 <body>
@@ -259,58 +258,24 @@
                     <div class="field-body">
                         <div class="field">
                             <div class="control">
-                                <textarea tabindex="15" class="textarea" name="parecer_tec" ></textarea>
+                                <textarea tabindex="15" class="textarea" name="parecer_tec" id="textarea-parecer-tecnico"></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
-                <div th:unless="${logado.isAnalista(logado)}">
-                    <div class="field is-horizontal">
-                        <div class="field-label is-normal">
-                            <label class="label">Parecer Técnico</label>
-                        </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="control">
-                                    <textarea tabindex="15" class="textarea" name="parecer_tec" th:text="${denuncia.parecer_tec}" disabled></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <br>
                 <div th:if="${logado.isAnalista(logado)}">
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
-                        <label class="label">Cadastro em Siligo:</label>
+                        <label class="label">Status da denuncia:</label>
                     </div>
                     <div class="field-body">
                         <div class="field">
                             <div class="select">
-                                <select tabindex="1" name="status">
+                                <select tabindex="1" name="status" id="select-status">
                                     <option value="Aguardando atendimento">Aguardando atendimento</option>
                                     <option value="Em atendimento">Em atendimento</option>
                                     <option value="Finalizada">Finalizada</option>
                                 </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div th:unless="${logado.isAnalista(logado)}">
-                    <div class="field is-horizontal">
-                        <div class="field-label is-normal">
-                            <label class="label">Status da denuncia:</label>
-                        </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="control">
-                                    <input tabindex="13" th:value="${denuncia.status}" class="input" type="text"
-                                           id="status" name="statusDenun" autocomplete="off" required
-                                           disabled>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -333,7 +298,14 @@
         </div>
     </div>
 
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="//assets.locaweb.com.br/locastyle/2.0.6/javascripts/locastyle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <div th:replace="~{base/base-elem :: script-padrao}"></div>
+    <script th:src="@{'/js/visualizarDenuncia.js'}" src="../../static/js/visualizarDenuncia.js"></script>
 </body>
 
 </html>
