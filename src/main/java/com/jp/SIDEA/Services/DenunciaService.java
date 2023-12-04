@@ -37,8 +37,8 @@ public class DenunciaService {
         den.setSigilo(json.sigilo());
         den.setCEP(json.cep());
         den.setLogradouro(json.logradouro());
-        den.setAtividade(json.atividade());
-        den.setCategoria(json.categoria());
+        den.setCategoria(json.atividade());
+        den.setAtividade(json.categoria());
         den.setBairro(json.bairro());
         den.setMunicipio(json.municipio());
         den.setReferencia(json.referencia());
@@ -68,7 +68,24 @@ public class DenunciaService {
     }
 
     public List<Denuncia> ListarFiltradasDenunciante(filtroJson json, String filtro){
-        return denuncias.listarProtcoloDenunciante(filtro, json.filtro(), logado.getLogado()).orElseGet(ArrayList::new);
+        switch (filtro){
+            case "protocolo":
+                return denuncias.listarProtcoloDenunciante(json.filtro(), logado.getLogado()).orElseGet(ArrayList::new);
+            case "municipio":
+                return denuncias.listarMunicipioDenunciante(json.filtro(), logado.getLogado()).orElseGet(ArrayList::new);
+            case "categoria":
+                return denuncias.listarCategoriaDenunciante(json.filtro(), logado.getLogado()).orElseGet(ArrayList::new);
+            case "data_ocorrencia":
+                Date data = Date.valueOf(json.filtro());
+                return denuncias.listarData_ocorridoDenunciante(data, logado.getLogado()).orElseGet(ArrayList::new);
+            case "data_denuncia":
+                Date data2 = Date.valueOf(json.filtro());
+                return denuncias.listarData_denunciaDenunciante(data2, logado.getLogado()).orElseGet(ArrayList::new);
+            case "status":
+                System.out.println(json.filtro());
+                return denuncias.listarStatusDenunciante(json.filtro(), logado.getLogado()).orElseGet(ArrayList::new);
+        }
+        return denuncias.listarProtcoloDenunciante(json.filtro(), logado.getLogado()).orElseGet(ArrayList::new);
     }
 
     public Denuncia obter(Long id){

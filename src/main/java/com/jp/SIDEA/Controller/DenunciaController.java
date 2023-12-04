@@ -77,7 +77,7 @@ public class DenunciaController {
     }
     */
 
-    @PostMapping("/visualizar/filtrar/{filtro}")
+    @PostMapping("/visualizar/filtro/{filtro}")
     public ModelAndView visualizarFiltros(@ModelAttribute filtroJson json, @PathVariable String filtro){
         ModelAndView modelinho = new ModelAndView("denuncia/denuncias");
         if(logado.getLogado().getTipo().equals("denunciante")){

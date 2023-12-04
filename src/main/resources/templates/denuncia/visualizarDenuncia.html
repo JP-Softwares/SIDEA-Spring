@@ -263,6 +263,20 @@
                         </div>
                     </div>
                 </div>
+                    <div th:unless="${logado.isAnalista(logado)}">
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <label class="label">Parecer Técnico</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <textarea tabindex="16" th:text="${denuncia.parecer_tec}" class="textarea" name="parecer_tec" id="textarea-parecer-tecnicod" disabled></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 <div th:if="${logado.isAnalista(logado)}">
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
