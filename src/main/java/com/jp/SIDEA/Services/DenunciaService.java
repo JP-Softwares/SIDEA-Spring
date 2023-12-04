@@ -67,8 +67,8 @@ public class DenunciaService {
         return denuncias.listarTodos().orElseGet(ArrayList::new);
     }
 
-    public List<Denuncia> ListarFiltradasTotal(filtroJson json){
-        return denuncias.listarFiltradasTotal(json.protocolo(), json.municipio(), json.categoria(), json.status()).orElseGet(ArrayList::new);
+    public List<Denuncia> ListarFiltradasDenunciante(filtroJson json, String filtro){
+        return denuncias.listarProtcoloDenunciante(filtro, json.filtro(), logado.getLogado()).orElseGet(ArrayList::new);
     }
 
     public Denuncia obter(Long id){

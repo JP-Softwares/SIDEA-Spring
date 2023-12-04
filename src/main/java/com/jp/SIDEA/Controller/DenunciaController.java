@@ -60,7 +60,7 @@ public class DenunciaController {
         return modelinho;
     }
 
-
+    /*
     @PostMapping("/visualizar")
     public ModelAndView visualizarFiltradas(@ModelAttribute filtroJson json){
         ModelAndView modelinho = new ModelAndView("denuncia/denuncias");
@@ -70,6 +70,18 @@ public class DenunciaController {
             modelinho.addObject("logado", logado.getLogado());
         }else{
             List<Denuncia> listDen = denuncias.ListarFiltradasTotal(json);
+            modelinho.addObject("ListDen", listDen);
+            modelinho.addObject("logado", logado.getLogado());
+        }
+        return modelinho;
+    }
+    */
+
+    @PostMapping("/visualizar/filtrar/{filtro}")
+    public ModelAndView visualizarFiltros(@ModelAttribute filtroJson json, @PathVariable String filtro){
+        ModelAndView modelinho = new ModelAndView("denuncia/denuncias");
+        if(logado.getLogado().getTipo().equals("denunciante")){
+            List<Denuncia> listDen = denuncias.ListarFiltradasDenunciante(json,filtro);
             modelinho.addObject("ListDen", listDen);
             modelinho.addObject("logado", logado.getLogado());
         }
