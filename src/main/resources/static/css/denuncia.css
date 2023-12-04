@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;800&display=swap');
 
-html {
-    overflow-y: hidden;
-}
-
 html, body, .content-sidea {
     margin: 0;
     padding: 0;
@@ -17,6 +13,22 @@ html, body, .content-sidea {
     align-items: center;
     align-content: center;
     flex-direction: column;
+    background-color: rgb(224, 224, 224);
+}
+
+.content-form {
+    margin: 2%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    background-color: aliceblue;
+    padding: 2%;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 5px 5px 15px 1px #00000038;
+    border-radius: 15px;
 }
 
 .title-form {
