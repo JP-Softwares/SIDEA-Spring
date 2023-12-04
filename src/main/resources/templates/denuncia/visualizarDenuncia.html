@@ -263,6 +263,7 @@
                         </div>
                     </div>
                 </div>
+                </div>
                     <div th:unless="${logado.isAnalista(logado)}">
                         <div class="field is-horizontal">
                             <div class="field-label is-normal">
@@ -277,6 +278,8 @@
                             </div>
                         </div>
                     </div>
+
+                <br>
                 <div th:if="${logado.isAnalista(logado)}">
                 <div class="field is-horizontal">
                     <div class="field-label is-normal">
@@ -294,7 +297,24 @@
                         </div>
                     </div>
                 </div>
-
+                </div>
+                <div th:unless="${logado.isAnalista(logado)}">
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">Status da denuncia:</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <div class="control">
+                                    <input tabindex="13" th:value="${denuncia.status}" class="input" type="text"
+                                           id="statusD" name="stats" autocomplete="off" required
+                                           disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
                 <!-- Botão de Envio -->
                 <div class="field is-grouped">
                     <div class="control">
