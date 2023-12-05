@@ -59,4 +59,9 @@ public class Denuncia {
         this.autor = autor;
     }
 
+
+
+    private boolean isAnonima(Denuncia den){
+        if(den.sigilo > 1)
+    }
 }
