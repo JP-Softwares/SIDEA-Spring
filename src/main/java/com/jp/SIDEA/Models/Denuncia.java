@@ -62,6 +62,7 @@ public class Denuncia {
 
 
     private boolean isAnonima(Denuncia den){
-        if(den.sigilo > 1)
+        if(den.sigilo >0) return true;
+        return false;
     }
 }
