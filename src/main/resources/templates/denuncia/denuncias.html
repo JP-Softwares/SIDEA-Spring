@@ -14,9 +14,9 @@
         <div class="bot-header-div">
             <aside th:replace="~{base/base-elem :: sidebar}"></aside> -->
                         
-            <div class="content">
-                <div class="content-sidea">
-                        <h1 class="title is-1 title-form">Denúncias Ambientais</h1>
+        <div class="content">
+            <div class="content-sidea">
+                <h1 class="title is-1 title-form">Denúncias Ambientais</h1>
 
                 <div class="content-principal">
                     <div class="table-container">
@@ -75,7 +75,7 @@
                                 </form>
 
                         <form class="form" action="/denuncia/visualizar/filtro/municipio" method="post">
-    
+
                             <div class="field">
                                 <div class="field-label is-normal">
                                     <label class="label">Município:</label>
@@ -94,7 +94,9 @@
                                         </div>
                                     </div>
                                     <button class="button is-primary" type="submit">Filtrar</button>
-                                </form>
+                                </div>
+                            </div>
+                        </form>
 
                         <form class="form" action="/denuncia/visualizar/filtro/categoria" method="post">
                             <div class="field">
@@ -103,28 +105,23 @@
                                 </div>
                                 <div class="field-body">
                                     <div class="field">
-                                        <div class="field-label is-normal">
-                                            <label class="label">Categoria da Denuncia:</label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <div class="select">
-                                                    <select tabindex="5" id="categoria" name="filtro">
-                                                        <option value="Fauna">Fauna</option>
-                                                        <option value="Flora">Flora</option>
-                                                        <option value="Poluição">Poluição</option>
-                                                        <option value="Ornamento Urbano e Patrimônio Cultural">Ornamento Urbano e Patrimônio Cultural</option>
-                                                        <option value="Administração Ambiente">Administração Ambiente</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+                                        <div class="select">
+                                            <select tabindex="5" id="categoria" name="filtro">
+                                                <option value="Fauna">Fauna</option>
+                                                <option value="Flora">Flora</option>
+                                                <option value="Poluição">Poluição</option>
+                                                <option value="Ornamento Urbano e Patrimônio Cultural">Ornamento Urbano e Patrimônio Cultural</option>
+                                                <option value="Administração Ambiente">Administração Ambiente</option>
+                                            </select>
                                         </div>
                                     </div>
-                                    <button class="button is-primary" type="submit">Filtrar</button>
-                                </form>
+                                </div>
+                            </div>
+                            <button class="button is-primary" type="submit">Filtrar</button>
+                        </form>
 
                         <form class="form" action="/denuncia/visualizar/filtro/data_ocorrencia" method="post">
-    
+
                             <div class="field">
                                 <div class="field-label is-normal">
                                     <label class="label">Data da ocorrência:</label>
@@ -143,10 +140,12 @@
                                         </div>
                                     </div>
                                     <button class="button is-primary" type="submit">Filtrar</button>
-                                </form>
+                                </div>
+                            </div>
+                        </form>
 
                         <form class="form" action="/denuncia/visualizar/filtro/data_denuncia" method="post">
-    
+
                             <div class="field">
                                 <div class="field-label is-normal">
                                     <label class="label">Data da Denúncia:</label>
@@ -165,10 +164,12 @@
                                         </div>
                                     </div>
                                     <button class="button is-primary" type="submit">Filtrar</button>
-                                </form>
+                                </div>
+                            </div>
+                        </form>
 
                         <form class="form" action="/denuncia/visualizar/filtro/status" method="post">
-    
+
                             <div class="field">
                                 <div class="field-label is-normal">
                                     <label class="label">Status:</label>
@@ -184,11 +185,12 @@
                                         </div>
                                     </div>
                                     <button class="button is-primary" type="submit">Filtrar</button>
-            
-                                </form>
+                                </div>
                             </div>
+                        </form>
                         </div>
-                </div>
+                    </div>
+            </div>
         </div>
         
         <div th:replace="~{base/base-elem :: script-padrao}"></div>
