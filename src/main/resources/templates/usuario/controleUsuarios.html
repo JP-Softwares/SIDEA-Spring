@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
     <head th:replace="~{base/base-elem :: head-padrao}"></head>
 
     <head>
@@ -9,42 +9,49 @@
     </head>
 
     <body>
+        <header th:replace="~{base/base-elem :: header}"></header>
 
-        <div class="content-sidea">
-                <h1 class="title is-1 title-form">Controle de Usuários</h1>
+        <div class="bot-header-div">
+            <aside th:replace="~{base/base-elem :: sidebar}"></aside>
+            
+            <div class="content">
+                <div class="content-sidea">
+                        <h1 class="title is-1 title-form">Controle de Usuários</h1>
 
-                <div class="content-principal">
-                    <div class="table-container">
-                        <table class="table is-striped is-vcentered">
-                            <thead class="is-vcentered">
-                                <tr>
-                                    <th scope="col">Login</th>
-                                    <th scope="col">Nome</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Telefone</th>
-                                    <th scope="col">Tipo</th>
-                                    <th scope="col">Editar</th>
-                                </tr>
-                            </thead>
-                            <tbody class="is-vcentered">
-                                <tr th:each="usuario : ${listUser}">
-                                    <td th:text="${usuario.getLogin()}"></td>
-                                    <td th:text="${usuario.getNome()}"></td>
-                                    <td th:text="${usuario.getEmail()}"></td>
-                                    <td th:text="${usuario.getTelefone()}"></td>
-                                    <td th:text="${usuario.getTipo()}"></td>
-                                    <td>
-                                        <a th:href="@{'/usuario/' + ${usuario.id} + '/visualizar'}">
-                                            <button id="editarUsuario" class="button btn-second" >
-                                                editar
-                                            </button>
-                                        </a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                        <div class="content-principal">
+                            <div class="table-container">
+                                <table class="table is-striped is-vcentered">
+                                    <thead class="is-vcentered">
+                                        <tr>
+                                            <th scope="col">Login</th>
+                                            <th scope="col">Nome</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Telefone</th>
+                                            <th scope="col">Tipo</th>
+                                            <th scope="col">Editar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="is-vcentered">
+                                        <tr th:each="usuario : ${listUser}">
+                                            <td th:text="${usuario.getLogin()}"></td>
+                                            <td th:text="${usuario.getNome()}"></td>
+                                            <td th:text="${usuario.getEmail()}"></td>
+                                            <td th:text="${usuario.getTelefone()}"></td>
+                                            <td th:text="${usuario.getTipo()}"></td>
+                                            <td>
+                                                <a th:href="@{'/usuario/' + ${usuario.id} + '/visualizar'}">
+                                                    <button id="editarUsuario" class="button btn-second" >
+                                                        editar
+                                                    </button>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                 </div>
+            </div>
         </div>
 
         <script async="" src="//www.google-analytics.com/analytics.js"></script>

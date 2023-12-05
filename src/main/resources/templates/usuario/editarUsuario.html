@@ -9,104 +9,111 @@
     </head>
 
     <body>
+        <header th:replace="~{base/base-elem :: header}"></header>
 
-        <div class="content-sidea">
+        <div class="bot-header-div">
+            <aside th:replace="~{base/base-elem :: sidebar}"></aside>
+            
+            <div class="content">
+                <div class="content-sidea">
 
-            <div class="content-form">
-                <h1 class="title is-1 title-form">Editar Usuário</h1>
+                    <div class="content-form">
+                        <h1 class="title is-1 title-form">Editar Usuário</h1>
 
-                <form class="form" action="../denuncia" method="post" enctype="multipart/form-data">
+                        <form class="form" action="../denuncia" method="post" enctype="multipart/form-data">
 
-                    <!-- Campo Tipo de Usuário -->
-                    <div class="field is-horizontal">
-                        <div class="field-label is-normal">
-                            <label class="label">Tipo de Usuário:</label>
-                        </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="select">
-                                    <select tabindex="1" name="tipo" id="select-tipo" th:value="${usuario.tipo}">
-                                        <option value="Denunciante">Denunciante</option>
-                                        <option value="Analista">Analista</option>
-                                    </select>
+                            <!-- Campo Tipo de Usuário -->
+                            <div class="field is-horizontal">
+                                <div class="field-label is-normal">
+                                    <label class="label">Tipo de Usuário:</label>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <div class="select">
+                                            <select tabindex="1" name="tipo" id="select-tipo" th:value="${usuario.tipo}">
+                                                <option value="Denunciante">Denunciante</option>
+                                                <option value="Analista">Analista</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
 
-                    <!-- Campo Nome -->
-                    <div class="field is-horizontal">
-                        <div class="field-label is-normal">
-                            <label class="label">Nome:</label>
-                        </div>
-                        <div class="field-body">
-                            <div class="field">
+                            <!-- Campo Nome -->
+                            <div class="field is-horizontal">
+                                <div class="field-label is-normal">
+                                    <label class="label">Nome:</label>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <div class="control">
+                                            <input tabindex="2" class="input" type="text" name="nome" autocomplete="off" th:text="${usuario.nome}"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Campo E-mail -->
+                            <div class="field is-horizontal">
+                                <div class="field-label is-normal">
+                                    <label class="label">E-mail:</label>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <div class="control">
+                                            <input tabindex="3" class="input" type="email" name="email" autocomplete="off" th:text="${usuario.email}"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Campo Telefone -->
+                            <div class="field is-horizontal">
+                                <div class="field-label is-normal">
+                                    <label class="label">Telefone:</label>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <div class="control">
+                                            <input class="input cel-sp-mask" tabindex="4" class="input" type="text" name="telefone" autocomplete="off" th:text="${usuario.telefone}"
+                                            placeholder="(__) _____-____" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Campo CPF -->
+                            <div class="field is-horizontal">
+                                <div class="field-label is-normal">
+                                    <label class="label">CPF:</label>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <div class="control">
+                                            <input class="input cpf-mask" tabindex="5" class="input" type="text" name="login" autocomplete="off" th:text="${usuario.login}"
+                                                required disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Botão de Envio -->
+                            <div class="field is-grouped">
                                 <div class="control">
-                                    <input tabindex="2" class="input" type="text" name="nome" autocomplete="off" th:text="${usuario.nome}"
-                                        required>
+                                    <a th:href="@{'/usuario/controleUsuarios'}">
+                                        <button tabindex="7" type="button" class="button is-link is-light">Voltar</button>
+                                    </a>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Campo E-mail -->
-                    <div class="field is-horizontal">
-                        <div class="field-label is-normal">
-                            <label class="label">E-mail:</label>
-                        </div>
-                        <div class="field-body">
-                            <div class="field">
                                 <div class="control">
-                                    <input tabindex="3" class="input" type="email" name="email" autocomplete="off" th:text="${usuario.email}"
-                                        required>
+                                    <button tabindex="6" class="button is-link" type="submit">Salvar</button>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
-
-                    <!-- Campo Telefone -->
-                    <div class="field is-horizontal">
-                        <div class="field-label is-normal">
-                            <label class="label">Telefone:</label>
-                        </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="control">
-                                    <input class="input cel-sp-mask" tabindex="4" class="input" type="text" name="telefone" autocomplete="off" th:text="${usuario.telefone}"
-                                    placeholder="(__) _____-____" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Campo CPF -->
-                    <div class="field is-horizontal">
-                        <div class="field-label is-normal">
-                            <label class="label">CPF:</label>
-                        </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="control">
-                                    <input class="input cpf-mask" tabindex="5" class="input" type="text" name="login" autocomplete="off" th:text="${usuario.login}"
-                                        required disabled>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Botão de Envio -->
-                    <div class="field is-grouped">
-                        <div class="control">
-                            <a th:href="@{'/usuario/controleUsuarios'}">
-                                <button tabindex="7" type="button" class="button is-link is-light">Voltar</button>
-                            </a>
-                        </div>
-                        <div class="control">
-                            <button tabindex="6" class="button is-link" type="submit">Salvar</button>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
 

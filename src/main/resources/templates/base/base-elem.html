@@ -5,7 +5,23 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link rel="stylesheet" type="text/css" href="//assets.locaweb.com.br/locastyle/edge/stylesheets/locastyle.css">
+    <link rel="stylesheet" href="../../static/css/base.css" th:href="@{'/css/base.css'}">
 </head>
+
+<header th:fragment="header">
+    <div id="div-header-title">
+        <h1 class="title is-1 title-form" id="header-title">SIDEA - Sistema de Denúncia Ambiental</h1>
+    </div>
+</header>
+
+<aside class="menu" id="menu-lateral" th:fragment="sidebar">
+    <ul class="menu-list">
+      <li><a id="li-a-home" th:href="@{'/home'}">Home</a></li>
+      <li><a id="li-a-nova-denuncia" th:href="@{'/denuncia'}">Nova Denúncia</a></li>
+      <li><a id="li-a-usuarios" th:href="@{'usuario/controleUsuarios'}">Usuários</a></li>
+      <li><a id="li-a-denuncias" th:href="@{'/denuncia/visualizar'}">Denúncias</a></li>
+    </ul>
+</aside>
 
 <div th:fragment="script-padrao">
     <script async="" src="//www.google-analytics.com/analytics.js"></script>

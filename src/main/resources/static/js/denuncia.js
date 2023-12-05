@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $("#anexo").bind('change', handleFileSelect);
     $("#select-categoria").bind('change', changeSubCategoria);
+    $("#li-a-nova-denuncia").addClass("is-active");
 
     changeSubCategoria();
 });

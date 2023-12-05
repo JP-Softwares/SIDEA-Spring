@@ -1,0 +1,38 @@
+header {
+    display: flex;
+    height: 7%;
+    box-shadow: 10px 0 15px 5px #00000041;
+    position: relative;
+}
+
+#div-header-title {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+#header-title {
+    color: black;
+    text-align: center;
+    width: 100%;
+    font-size: calc(28px + 0.390625vw);
+}
+
+.bot-header-div {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+}
+
+#menu-lateral {
+    width: 15%;
+}
+
+.title-form {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+}
