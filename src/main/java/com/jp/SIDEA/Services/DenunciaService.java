@@ -68,9 +68,11 @@ public class DenunciaService {
     }
 
     public List<Denuncia> ListarFiltradasDenunciante(filtroJson json, String filtro) {
-        if (logado.getLogado().isAnalista(logado.getLogado())) {
+        if (!logado.getLogado().getTipo().equals("denunciante")) {
+            System.out.println("teste");
             switch (filtro) {
                 case "protocolo":
+                    System.out.println(json.filtro());
                     return denuncias.listarProtcoloAnalista(json.filtro()).orElseGet(ArrayList::new);
                 case "municipio":
                     return denuncias.listarMunicipioAnalista(json.filtro()).orElseGet(ArrayList::new);

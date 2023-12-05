@@ -80,11 +80,9 @@ public class DenunciaController {
     @PostMapping("/visualizar/filtro/{filtro}")
     public ModelAndView visualizarFiltros(@ModelAttribute filtroJson json, @PathVariable String filtro){
         ModelAndView modelinho = new ModelAndView("denuncia/denuncias");
-        if(logado.getLogado().getTipo().equals("denunciante")){
             List<Denuncia> listDen = denuncias.ListarFiltradasDenunciante(json,filtro);
             modelinho.addObject("ListDen", listDen);
             modelinho.addObject("logado", logado.getLogado());
-        }
         return modelinho;
     }
 

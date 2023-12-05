@@ -33,7 +33,7 @@ public interface DenunciaRepository extends JpaRepository<Denuncia, Long> {
     @Query("FROM Denuncia WHERE municipio = :filtro and autor = :logado")
     Optional<List<Denuncia>> listarMunicipioDenunciante(String filtro, Usuario logado);
 
-    @Query("FROM Denuncia WHERE atividade = :filtro and autor = :logado")
+    @Query("FROM Denuncia WHERE categoria = :filtro and autor = :logado")
     Optional<List<Denuncia>> listarCategoriaDenunciante(String filtro, Usuario logado);
 
     @Query("FROM Denuncia WHERE data_ocorrido = :filtro and autor = :logado")
@@ -54,7 +54,7 @@ public interface DenunciaRepository extends JpaRepository<Denuncia, Long> {
     @Query("FROM Denuncia WHERE municipio = :filtro")
     Optional<List<Denuncia>> listarMunicipioAnalista(String filtro);
 
-    @Query("FROM Denuncia WHERE atividade = :filtro")
+    @Query("FROM Denuncia WHERE categoria = :filtro")
     Optional<List<Denuncia>> listarCategoriaAnalista(String filtro);
 
     @Query("FROM Denuncia WHERE data_ocorrido = :filtro")
