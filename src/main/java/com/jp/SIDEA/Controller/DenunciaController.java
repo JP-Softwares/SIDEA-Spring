@@ -39,9 +39,9 @@ public class DenunciaController {
     }
 
     @PostMapping
-    public ModelAndView denunciaView(@ModelAttribute denunciajson json,  @RequestParam("imagem") MultipartFile imagem) throws IOException {
+    public ModelAndView denunciaPostView(@ModelAttribute denunciajson json,  @RequestParam("imagem") MultipartFile imagem) throws IOException {
         denuncias.Salvar(json,imagem);
-        ModelAndView modelinho = new ModelAndView("redirect:/home");
+        ModelAndView modelinho = new ModelAndView("denuncia/novaDenuncia");
         return modelinho;
     }
 
