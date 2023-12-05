@@ -46,4 +46,25 @@ public interface DenunciaRepository extends JpaRepository<Denuncia, Long> {
     Optional<List<Denuncia>> listarStatusDenunciante(String filtro, Usuario logado);
 
 
+
+
+    @Query("FROM Denuncia WHERE protocolo = :filtro")
+    Optional<List<Denuncia>> listarProtcoloAnalista(String filtro);
+
+    @Query("FROM Denuncia WHERE municipio = :filtro")
+    Optional<List<Denuncia>> listarMunicipioAnalista(String filtro);
+
+    @Query("FROM Denuncia WHERE atividade = :filtro")
+    Optional<List<Denuncia>> listarCategoriaAnalista(String filtro);
+
+    @Query("FROM Denuncia WHERE data_ocorrido = :filtro")
+    Optional<List<Denuncia>> listarData_ocorridoAnalista(Date filtro);
+
+    @Query("FROM Denuncia WHERE data_denuncia = :filtro")
+    Optional<List<Denuncia>> listarData_denunciaAnalista(Date filtro);
+
+    @Query("FROM Denuncia WHERE status = :filtro")
+    Optional<List<Denuncia>> listarStatusAnalista(String filtro);
+
+
 }

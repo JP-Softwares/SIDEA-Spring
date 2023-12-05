@@ -67,23 +67,44 @@ public class DenunciaService {
         return denuncias.listarTodos().orElseGet(ArrayList::new);
     }
 
-    public List<Denuncia> ListarFiltradasDenunciante(filtroJson json, String filtro){
-        switch (filtro){
-            case "protocolo":
-                return denuncias.listarProtcoloDenunciante(json.filtro(), logado.getLogado()).orElseGet(ArrayList::new);
-            case "municipio":
-                return denuncias.listarMunicipioDenunciante(json.filtro(), logado.getLogado()).orElseGet(ArrayList::new);
-            case "categoria":
-                return denuncias.listarCategoriaDenunciante(json.filtro(), logado.getLogado()).orElseGet(ArrayList::new);
-            case "data_ocorrencia":
-                Date data = Date.valueOf(json.filtro());
-                return denuncias.listarData_ocorridoDenunciante(data, logado.getLogado()).orElseGet(ArrayList::new);
-            case "data_denuncia":
-                Date data2 = Date.valueOf(json.filtro());
-                return denuncias.listarData_denunciaDenunciante(data2, logado.getLogado()).orElseGet(ArrayList::new);
-            case "status":
-                System.out.println(json.filtro());
-                return denuncias.listarStatusDenunciante(json.filtro(), logado.getLogado()).orElseGet(ArrayList::new);
+    public List<Denuncia> ListarFiltradasDenunciante(filtroJson json, String filtro) {
+        if (logado.getLogado().isAnalista(logado.getLogado())) {
+            switch (filtro) {
+                case "protocolo":
+                    return denuncias.listarProtcoloAnalista(json.filtro()).orElseGet(ArrayList::new);
+                case "municipio":
+                    return denuncias.listarMunicipioAnalista(json.filtro()).orElseGet(ArrayList::new);
+                case "categoria":
+                    return denuncias.listarCategoriaAnalista(json.filtro()).orElseGet(ArrayList::new);
+                case "data_ocorrencia":
+                    Date data = Date.valueOf(json.filtro());
+                    return denuncias.listarData_ocorridoAnalista(data).orElseGet(ArrayList::new);
+                case "data_denuncia":
+                    Date data2 = Date.valueOf(json.filtro());
+                    return denuncias.listarData_denunciaAnalista(data2).orElseGet(ArrayList::new);
+                case "status":
+                    System.out.println(json.filtro());
+                    return denuncias.listarStatusAnalista(json.filtro()).orElseGet(ArrayList::new);
+            }
+        } else {
+            switch (filtro) {
+                case "protocolo":
+                    return denuncias.listarProtcoloDenunciante(json.filtro(), logado.getLogado()).orElseGet(ArrayList::new);
+                case "municipio":
+                    return denuncias.listarMunicipioDenunciante(json.filtro(), logado.getLogado()).orElseGet(ArrayList::new);
+                case "categoria":
+                    return denuncias.listarCategoriaDenunciante(json.filtro(), logado.getLogado()).orElseGet(ArrayList::new);
+                case "data_ocorrencia":
+                    Date data = Date.valueOf(json.filtro());
+                    return denuncias.listarData_ocorridoDenunciante(data, logado.getLogado()).orElseGet(ArrayList::new);
+                case "data_denuncia":
+                    Date data2 = Date.valueOf(json.filtro());
+                    return denuncias.listarData_denunciaDenunciante(data2, logado.getLogado()).orElseGet(ArrayList::new);
+                case "status":
+                    System.out.println(json.filtro());
+                    return denuncias.listarStatusDenunciante(json.filtro(), logado.getLogado()).orElseGet(ArrayList::new);
+            }
+
         }
         return denuncias.listarProtcoloDenunciante(json.filtro(), logado.getLogado()).orElseGet(ArrayList::new);
     }

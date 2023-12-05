@@ -48,7 +48,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input tabindex="2" class="input" type="text" name="nome" autocomplete="off" th:text="${usuario.nome}"
+                                            <input tabindex="2" class="input" type="text" name="nome" autocomplete="off" th:value="${usuario.nome}"
                                                 required>
                                         </div>
                                     </div>
@@ -63,7 +63,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input tabindex="3" class="input" type="email" name="email" autocomplete="off" th:text="${usuario.email}"
+                                            <input tabindex="3" class="input" type="email" name="email" autocomplete="off" th:value="${usuario.email}"
                                                 required>
                                         </div>
                                     </div>
@@ -78,7 +78,7 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input cel-sp-mask" tabindex="4" type="text" name="telefone" autocomplete="off" th:text="${usuario.telefone}"
+                                            <input class="input cel-sp-mask" tabindex="4" type="text" name="telefone" autocomplete="off" th:value="${usuario.telefone}"
                                             placeholder="(__) _____-____" required>
                                         </div>
                                     </div>
@@ -93,56 +93,12 @@
                                 <div class="field-body">
                                     <div class="field">
                                         <div class="control">
-                                            <input class="input cpf-mask" tabindex="5" type="text" name="login" autocomplete="off" th:text="${usuario.login}"
+                                            <input class="input cpf-mask" tabindex="5" type="text" name="login" autocomplete="off" th:value="${usuario.login}"
                                                 required disabled>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Botão de Envio -->
-                            <div class="field is-grouped">
-                                <div class="control">
-                                    <input tabindex="2" class="input" type="text" name="nome" autocomplete="off" th:value="${usuario.nome}"
-                                        required>
-                                </div>
-                                <div class="control">
-                                    <input tabindex="3" class="input" type="email" name="email" autocomplete="off" th:value="${usuario.email}"
-                                        required>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-
-                    <!-- Campo Telefone -->
-                    <div class="field is-horizontal">
-                        <div class="field-label is-normal">
-                            <label class="label">Telefone:</label>
-                        </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="control">
-                                    <input class="input cel-sp-mask" tabindex="4" type="text" name="telefone" autocomplete="off" th:value="${usuario.telefone}"
-                                    placeholder="(__) _____-____" required>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Campo CPF -->
-                    <div class="field is-horizontal">
-                        <div class="field-label is-normal">
-                            <label class="label">CPF:</label>
-                        </div>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="control">
-                                    <input class="input cpf-mask" tabindex="5" type="text" name="login" autocomplete="off" th:value="${usuario.login}"
-                                        required disabled>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Botão de Envio -->
                     <div class="field is-grouped">
