@@ -18,46 +18,46 @@
                 <div class="content-sidea">
                         <h1 class="title is-1 title-form">Denúncias Ambientais</h1>
 
-                        <div class="content-principal">
-                            <div class="table-container">
-                                <table class="table is-striped is-vcentered">
-                                    <thead class="is-vcentered">
-                                    <tr>
-                                        <th>Protocolo</th>
-                                        <th>Município</th>
-                                        <th>Bairro</th>
-                                        <th>Logradouro</th>
-                                        <th>Categoria</th>
-                                        <th>Data do Ocorrido</th>
-                                        <th>Data de abertura</th>
-                                        <th>Status</th>
-                                        <th></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody class="is-vcentered">
-                                    <tr th:each="denuncia : ${ListDen}">
-                                        <td th:text="${denuncia.protocolo}"></td>
-                                        <td th:text="${denuncia.municipio}"></td>
-                                        <td th:text="${denuncia.bairro}"></td>
-                                        <td th:text="${denuncia.logradouro}"></td>
-                                        <td th:text="${denuncia.atividade}"></td>
-                                        <td th:text="${denuncia.data_ocorrido}"></td>
-                                        <td th:text="${denuncia.data_denuncia}"></td>
-                                        <td th:text="${denuncia.status}"></td>
-                                        <td>
-                                            <a th:href="@{'/denuncia/' + ${denuncia.id} + '/visualizar'}">
-                                                <button id="Ver" class="button btn-second">
-                                                    Editar
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                <div class="content-principal">
+                    <div class="table-container">
+                        <table class="table is-striped is-vcentered">
+                            <thead class="is-vcentered">
+                            <tr>
+                                <th>Protocolo</th>
+                                <th>Município</th>
+                                <th>Bairro</th>
+                                <th>Logradouro</th>
+                                <th>Categoria</th>
+                                <th>Data do Ocorrido</th>
+                                <th>Data de abertura</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody class="is-vcentered">
+                            <tr th:each="denuncia : ${ListDen}">
+                                <td th:text="${denuncia.protocolo}"></td>
+                                <td th:text="${denuncia.municipio}"></td>
+                                <td th:text="${denuncia.bairro}"></td>
+                                <td th:text="${denuncia.logradouro}"></td>
+                                <td th:text="${denuncia.atividade}"></td>
+                                <td th:text="${denuncia.data_ocorrido}"></td>
+                                <td th:text="${denuncia.data_denuncia}"></td>
+                                <td th:text="${denuncia.status}"></td>
+                                <td>
+                                    <a th:href="@{'/denuncia/' + ${denuncia.id} + '/visualizar'}">
+                                        <button id="Ver" class="button btn-second">
+                                            Entrar
+                                        </button>
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-                            <div class="content-outside-form">
-                                <form class="form" action="../denuncia/visualizar/filtro/protocolo" method="post">
+                    <div class="content-outside-form">
+                        <form class="form" action="/denuncia/visualizar/filtro/protocolo" method="post">
 
                                     <div class="field">
                                         <div class="field-label is-normal">
@@ -74,8 +74,13 @@
                                     <button class="button is-primary" type="submit">Filtrar</button>
                                 </form>
 
-                                <form class="form" action="../denuncia/visualizar/filtro/municipio" method="post">
-            
+                        <form class="form" action="/denuncia/visualizar/filtro/municipio" method="post">
+    
+                            <div class="field">
+                                <div class="field-label is-normal">
+                                    <label class="label">Município:</label>
+                                </div>
+                                <div class="field-body">
                                     <div class="field">
                                         <div class="field-label is-normal">
                                             <label class="label">Município:</label>
@@ -91,7 +96,12 @@
                                     <button class="button is-primary" type="submit">Filtrar</button>
                                 </form>
 
-                                <form class="form" action="../denuncia/visualizar/filtro/categoria" method="post">
+                        <form class="form" action="/denuncia/visualizar/filtro/categoria" method="post">
+                            <div class="field">
+                                <div class="field-label is-normal">
+                                    <label class="label">Categoria da Denuncia:</label>
+                                </div>
+                                <div class="field-body">
                                     <div class="field">
                                         <div class="field-label is-normal">
                                             <label class="label">Categoria da Denuncia:</label>
@@ -113,8 +123,13 @@
                                     <button class="button is-primary" type="submit">Filtrar</button>
                                 </form>
 
-                                <form class="form" action="../denuncia/visualizar/filtro/data_ocorrencia" method="post">
-            
+                        <form class="form" action="/denuncia/visualizar/filtro/data_ocorrencia" method="post">
+    
+                            <div class="field">
+                                <div class="field-label is-normal">
+                                    <label class="label">Data da ocorrência:</label>
+                                </div>
+                                <div class="field-body">
                                     <div class="field">
                                         <div class="field-label is-normal">
                                             <label class="label">Data da ocorrência:</label>
@@ -130,8 +145,13 @@
                                     <button class="button is-primary" type="submit">Filtrar</button>
                                 </form>
 
-                                <form class="form" action="../denuncia/visualizar/filtro/data_denuncia" method="post">
-            
+                        <form class="form" action="/denuncia/visualizar/filtro/data_denuncia" method="post">
+    
+                            <div class="field">
+                                <div class="field-label is-normal">
+                                    <label class="label">Data da Denúncia:</label>
+                                </div>
+                                <div class="field-body">
                                     <div class="field">
                                         <div class="field-label is-normal">
                                             <label class="label">Data da Denúncia:</label>
@@ -147,22 +167,20 @@
                                     <button class="button is-primary" type="submit">Filtrar</button>
                                 </form>
 
-                                <form class="form" action="../denuncia/visualizar/filtro/status" method="post">
-            
+                        <form class="form" action="/denuncia/visualizar/filtro/status" method="post">
+    
+                            <div class="field">
+                                <div class="field-label is-normal">
+                                    <label class="label">Status:</label>
+                                </div>
+                                <div class="field-body">
                                     <div class="field">
-                                        <div class="field-label is-normal">
-                                            <label class="label">Status:</label>
-                                        </div>
-                                        <div class="field-body">
-                                            <div class="field">
-                                                <div class="select">
-                                                    <select tabindex="1" id="status" name="filtro">
-                                                        <option value="0">Aguardando atendimento</option>
-                                                        <option value="1">Em atendimento</option>
-                                                        <option value="2">Finalizada</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+                                        <div class="select">
+                                            <select tabindex="1" id="status" name="filtro">
+                                                <option value="Aguardando atendimento">Aguardando atendimento</option>
+                                                <option value="Em atendimento">Em atendimento</option>
+                                                <option value="Finalizada">Finalizada</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <button class="button is-primary" type="submit">Filtrar</button>

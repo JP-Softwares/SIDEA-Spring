@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,8 +27,23 @@ public interface DenunciaRepository extends JpaRepository<Denuncia, Long> {
     Optional<List<Denuncia>> listarTodos();
 
 
-    @Query("FROM Denuncia WHERE :filtro = :filtragem and autor = :logado")
-    Optional<List<Denuncia>> listarProtcoloDenunciante(String filtro, String filtragem, Usuario logado);
+    @Query("FROM Denuncia WHERE protocolo = :filtro and autor = :logado")
+    Optional<List<Denuncia>> listarProtcoloDenunciante(String filtro, Usuario logado);
+
+    @Query("FROM Denuncia WHERE municipio = :filtro and autor = :logado")
+    Optional<List<Denuncia>> listarMunicipioDenunciante(String filtro, Usuario logado);
+
+    @Query("FROM Denuncia WHERE atividade = :filtro and autor = :logado")
+    Optional<List<Denuncia>> listarCategoriaDenunciante(String filtro, Usuario logado);
+
+    @Query("FROM Denuncia WHERE data_ocorrido = :filtro and autor = :logado")
+    Optional<List<Denuncia>> listarData_ocorridoDenunciante(Date filtro, Usuario logado);
+
+    @Query("FROM Denuncia WHERE data_denuncia = :filtro and autor = :logado")
+    Optional<List<Denuncia>> listarData_denunciaDenunciante(Date filtro, Usuario logado);
+
+    @Query("FROM Denuncia WHERE status = :filtro and autor = :logado")
+    Optional<List<Denuncia>> listarStatusDenunciante(String filtro, Usuario logado);
 
 
 }
